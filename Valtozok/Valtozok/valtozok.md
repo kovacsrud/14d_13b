@@ -12,13 +12,14 @@
 ```
 
 ### Szöveg 
-
+```c#
             String str = "Valami szöveg";
+```
 
 ### karakter
-
+```c#
             Char ch = 'z';
-
+```
 ### lebegőpontos számok
             float e = 1.126f; //32 bites
             double f = 23.577; //64 bites
