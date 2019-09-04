@@ -39,22 +39,22 @@ Ezek a változók ún. érték típusú változók
 ### Tömb, objektumok
 
             tömb kezdőértékekkel
-			```c#
+```c#
             String[] szovegek = {"egy","kettő","három" };
-			```
+```
 
             kezdőértékek nélkül
-			```c#
+```c#
             String[] szovegek2 = new String[3];
-			```
+```
 			Nem a tömb, hanem csak a referenciája másolódik le!
 
-			```c#
+```c#
 			String[] szovegek3 = szovegek;
 			
             szovegek3[0] = "száz";
 
             Console.WriteLine($"A:{a},B:{b}");
             Console.WriteLine($"Sz:{szovegek[0]},Sz3:{szovegek3[0]}");
-			```
+```
 
