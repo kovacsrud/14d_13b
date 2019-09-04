@@ -38,6 +38,27 @@ namespace Valtozok
             Console.WriteLine("A:{0}, B:{1}, C:{2}",a,b,c);
             Console.WriteLine($"A:{a},B:{b},C:{c}");
 
+            //referencia típusú változók
+
+            // tömb kezdőértékekkel
+            String[] szovegek = {"egy","kettő","három" };
+
+            //kezdőértékek nélkül
+            String[] szovegek2 = new String[3];
+
+            a = 0;
+            b = 15;
+            a = b;
+            b = 20;
+
+            String[] szovegek3 = szovegek;
+
+            szovegek3[0] = "száz";
+
+            Console.WriteLine($"A:{a},B:{b}");
+            Console.WriteLine($"Sz:{szovegek[0]},Sz3:{szovegek3[0]}");
+
+
             Console.ReadKey();
         }
     }
