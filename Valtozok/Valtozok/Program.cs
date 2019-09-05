@@ -26,10 +26,7 @@ namespace Valtozok
 
             Char ch = 'z';
 
-            //lebegőpontos számok
-            float e = 1.126f; //32 bites
-            double f = 23.577; //64 bites
-            decimal g = 456.2353455m; //128 bites
+          
 
             //logikai
 
@@ -58,6 +55,12 @@ namespace Valtozok
             Console.WriteLine($"A:{a},B:{b}");
             Console.WriteLine($"Sz:{szovegek[0]},Sz3:{szovegek3[0]}");
 
+            //lebegőpontos számok
+            float e = 15.12643543793475959755459f; //32 bites
+            double f = 15.12643543793475959755459; //64 bites
+            decimal g = 15.12643543793475959755459m; //128 bites
+
+            Console.WriteLine($"E:{e},F:{f}, G:{g}");
 
             Console.ReadKey();
         }
