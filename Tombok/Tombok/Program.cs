@@ -58,14 +58,29 @@ namespace Tombok
 
             Console.WriteLine(elemek[1]);
 
-            szoveg = szoveg.ToUpper();
+            //A string karaktertömbbé alakítása
+            Char[] szovegCh = szoveg.ToCharArray();
 
-            for (int i = 0; i < szoveg.Length; i++)
+            for (int i = 0; i < szovegCh.Count(); i++)
             {
-                Console.Write(szoveg[i]);
+                Console.Write(szovegCh[i]);
             }
 
-            Console.WriteLine(szoveg);
+
+            for (int i = 0; i < szovegCh.Count(); i++)
+            {
+
+                szovegCh[i] = char.ToUpper(szovegCh[i]);
+                
+            }
+
+            for (int i = 0; i < szovegCh.Count(); i++)
+            {
+                Console.Write(szovegCh[i]);
+            }
+
+            
+            
 
             Console.ReadKey();
         }
