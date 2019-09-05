@@ -20,33 +20,52 @@ namespace Tombok
 
             //egy adott elemre az indexével(sorszámával) lehet hivatkozni
             //az elemek számozása 0-val kezdődik!
-            Console.WriteLine(szamok[0]);
-            Console.WriteLine(szovegek[1]);
+            //Console.WriteLine(szamok[0]);
+            //Console.WriteLine(szovegek[1]);
 
-            for (int i=0;i<szamok.Length;i++)
-            {
-                szamok[i] = i;
-            }
+            //for (int i=0;i<szamok.Length;i++)
+            //{
+            //    szamok[i] = i;
+            //}
 
-            for (int i = 0; i < szamok.Length; i++)
-            {
-                Console.WriteLine(szamok[i]);
-            }
+            //for (int i = 0; i < szamok.Length; i++)
+            //{
+            //    Console.WriteLine(szamok[i]);
+            //}
 
 
-            for (int i = szamok.Length-1; i >=0 ; i--)
-            {
-                Console.WriteLine(szamok[i]);
-            }
+            //for (int i = szamok.Length-1; i >=0 ; i--)
+            //{
+            //    Console.WriteLine(szamok[i]);
+            //}
 
             //String-ek
             var n = 15.54556;
 
             var szoveg = "Valami Szöveg";
 
+            //String hossza
             Console.WriteLine(szoveg.Length);
+            Console.WriteLine(szoveg.StartsWith("Val"));
+            Console.WriteLine(szoveg.Substring(1,4));
+            Console.WriteLine(szoveg.ToLower());
+            Console.WriteLine(szoveg.ToUpper());
+            Console.WriteLine(szoveg.Replace('a','ö'));
+            //Szóközök eltüntetése
+            Console.WriteLine(szoveg.Replace("al", ""));
 
+            var elemek = szoveg.Split(' ');
 
+            Console.WriteLine(elemek[1]);
+
+            szoveg = szoveg.ToUpper();
+
+            for (int i = 0; i < szoveg.Length; i++)
+            {
+                Console.Write(szoveg[i]);
+            }
+
+            Console.WriteLine(szoveg);
 
             Console.ReadKey();
         }
