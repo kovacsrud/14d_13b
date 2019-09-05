@@ -26,11 +26,33 @@ namespace StringAlakitas
                 }
             }
 
+            var szamlalo = 0;
 
+            for (int i = 0; i < szovegCh.Length; i++)
+            {
+                if (Char.IsDigit(szovegCh[i]))
+                {
+                    szamlalo++;
+                    
+                }
+                
+            }
+
+            Console.WriteLine($"A szövegben {szamlalo} db szám van!");
 
             szoveg = new string(szovegCh);
 
             Console.WriteLine(szoveg);
+
+            //értékadás apróságai
+            //nem mindegy, hogy mikor történik az értékadás
+            //++a először növelés, aztán értékadás
+            //a++ először értékadás, majd növelés
+
+            var a = 1;
+            var b = ++a;
+
+            Console.WriteLine($"B:{b},A:{a}");
 
             Console.ReadKey();
         }
