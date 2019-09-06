@@ -17,6 +17,7 @@ namespace CharCount
             var szamlalo = 0;
             Console.WriteLine();
 
+                        
             for (int i = 0; i < mondat.Length; i++)
             {
                 if (mondat[i]==karakter)
