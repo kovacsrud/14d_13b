@@ -23,10 +23,23 @@ namespace LottoGame
             //Ugyanaz a szám nem szerepelhet
             //1-nél kisebb nem lehet
             //osszSzam-nal nagyobb nem lehet
+            var temp = 0;
+            for (int i = 0; i < szamDb; i++)
+            {
+                Console.Write($"{i+1}.tipp:");
+                temp = Convert.ToInt32(Console.ReadLine());
+                while (temp<1 || temp>osszSzam || Array.IndexOf(tippek,temp)>-1)
+                {
+                    Console.Write($"Rossz! Újra{i + 1}.tipp:");
+                    temp = Convert.ToInt32(Console.ReadLine());
+                }
+                tippek[i] = temp;
+            }
+
 
 
             //Nyerőszámok sorsolása
-
+            Console.ReadKey();
         }
     }
 }
