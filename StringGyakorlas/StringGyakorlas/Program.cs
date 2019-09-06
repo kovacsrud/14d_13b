@@ -17,7 +17,7 @@ namespace StringGyakorlas
             Console.WriteLine("Adja meg a szót:");
             var szo = Console.ReadLine();
 
-            if (mondat.Contains(szo))
+            if (mondat.ToLower().Contains(szo.ToLower()))
             {
                 Console.WriteLine("Tartalmazza");
             } else
