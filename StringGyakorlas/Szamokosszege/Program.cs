@@ -11,8 +11,8 @@ namespace Szamokosszege
         static void Main(string[] args)
         {
             Console.WriteLine("Adja meg a mondatot:");
-            var mondat = Console.ReadLine().ToCharArray();
-            var sum = 0;
+            var mondat = Console.ReadLine();
+            double sum = 0;
 
             for (int i = 0; i < mondat.Length; i++)
             {
@@ -21,7 +21,7 @@ namespace Szamokosszege
                 {
                     //a karakter numerikus értéke kell, amit még
                     //konvertálni is kell
-                    sum=sum+Convert.ToInt32(Char.GetNumericValue(mondat[i]));
+                    sum=sum+(Char.GetNumericValue(mondat[i]));
                 }
             }
 
