@@ -16,6 +16,7 @@ namespace LottoGame
             Console.Write("Mennyiből sorsolunk?:");
             var osszSzam = Convert.ToInt32(Console.ReadLine());
             Random veletlenSzam = new Random();
+            var talalat = 0;
 
             int[] tippek = new int[szamDb];
             int[] nyeroSzamok = new int[szamDb];
@@ -54,8 +55,30 @@ namespace LottoGame
             TombLista(tippek);
             TombLista(nyeroSzamok);
 
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                for (int j = 0; j < nyeroSzamok.Length; j++)
+                {
+                    if (tippek[i]==nyeroSzamok[j])
+                    {
+                        talalat++;
+                    }
+                }
+            }
 
+            var talalat2 = 0;
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                if (nyeroSzamok.Contains(tippek[i]))
+                {
+                    talalat2++;
+                }
+            }
 
+            Console.WriteLine();
+            
+            Console.WriteLine($"Találatok:{talalat},{talalat2}");
+            
             Console.ReadKey();
         }
 
