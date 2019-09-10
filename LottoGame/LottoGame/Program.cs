@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,8 @@ namespace LottoGame
                 {
                     talalat2++;
                 }
+                //Kiíratás az OUTPUT ablakba
+                //Debug.WriteLine(tippek[i]);
             }
 
             Console.WriteLine();
