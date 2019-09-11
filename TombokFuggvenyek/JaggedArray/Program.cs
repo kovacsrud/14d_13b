@@ -31,15 +31,26 @@ namespace JaggedArray
             // A beágyazott tömbök elemszáma 10-20 közötti, a tömbelemek pedig
             // 1-200 közötti számok legyenek!
             Random rand = new Random();
-            int elemSzam = rand.Next(6, 11);
-            int[][] vTomb = new int[elemSzam][];
+            
+            int[][] vTomb = new int[rand.Next(6, 11)][];
 
             for (int i = 0; i < vTomb.Length; i++)
             {
-
+                vTomb[i] = new int[rand.Next(10,21)];
+                for (int j = 0; j < vTomb[i].Length; j++)
+                {
+                    vTomb[i][j] = rand.Next(1,201);
+                }
             }
 
-
+            for (int i = 0; i < vTomb.Length; i++)
+            {
+                for (int j = 0; j < vTomb[i].Length; j++)
+                {
+                    Console.Write(vTomb[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
 
 
             Console.ReadKey();
