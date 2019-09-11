@@ -49,7 +49,14 @@ namespace JaggedArray
                 {
                     Console.Write(vTomb[i][j] + " ");
                 }
+                Console.Write("Összeg:" + vTomb[i].Sum());
+                Console.Write(" Átlag:" + vTomb[i].Average());
+                Console.Write(" Min:" + vTomb[i].Min());
+                Console.Write(" Max:" + vTomb[i].Max());
+
+
                 Console.WriteLine();
+                
             }
 
 
