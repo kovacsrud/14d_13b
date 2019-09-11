@@ -33,7 +33,14 @@ namespace Functions
             a = a * a;
         }
         //Függvény, amely visszatér egy egész szám 
-        //valamely egész hatványával      
+        //valamely egész hatványával   
+
+        public static double Hatvany(double szam,double kitevo)
+        {
+
+            return Math.Pow(szam, kitevo);
+            
+        }
 
         static void Main(string[] args)
         {
@@ -47,7 +54,7 @@ namespace Functions
             Ertek(a);
             Console.WriteLine(a);
             Cim(ref a);
-            Console.WriteLine(a);
+            Console.WriteLine(Hatvany(2,3));
 
             Console.ReadKey();
         }
