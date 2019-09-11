@@ -32,3 +32,34 @@ public static int Osszeg(int a,int b)
       return a + b;
    }
 ```
+# Érték és cím szerinti paraméter átadás
+
+Az alábbi két függvény közül az első érték szerinti átadással kap paramétert. Ebben az esetben az átadott változó lemásolódik, a globális változó értéke nem fog változni.
+
+**Érték szerinti paraméterátadás**
+```c#
+ public static void Ertek(int a)
+        {
+            a = a * a;
+        }
+```
+A hívás módja:
+```C#
+int a=3
+Ertek(a);
+```
+A értéke a függvény hívása után is 3 lesz.
+**Cím, vagy referencia szerinti paraméterátadás**
+```c#
+ public static void Cim(ref int a)
+        {
+            a = a * a;
+        }
+```
+A hívás módja cím szerinti paraméter átadásnál:
+```C#
+int a=3
+Cim(ref a);
+```
+Ebben az esetben az **a** változó címét adjuk át.
+**a** változó értéke a Cim függvény hívása után 9 lesz.

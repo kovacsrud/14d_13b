@@ -22,6 +22,19 @@ namespace Functions
            return a + b;
         }
 
+        //érték szerinti paraméter átadás
+        public static void Ertek(int a)
+        {
+            a = a * a;
+        }
+        //cím szerinti paraméter átadás
+        public static void Cim(ref int a)
+        {
+            a = a * a;
+        }
+        //Függvény, amely visszatér egy egész szám 
+        //valamely egész hatványával      
+
         static void Main(string[] args)
         {
             Kiir("Átadott szöveg");
@@ -29,7 +42,12 @@ namespace Functions
             Kiir();
             var a = Osszeg(3, 12);
             Console.WriteLine(a);
-            Console.WriteLine(Osszeg(25,129));                       
+            Console.WriteLine(Osszeg(25,129));
+            a = 3;
+            Ertek(a);
+            Console.WriteLine(a);
+            Cim(ref a);
+            Console.WriteLine(a);
 
             Console.ReadKey();
         }
