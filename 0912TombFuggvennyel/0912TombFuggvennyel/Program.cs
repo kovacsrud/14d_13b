@@ -34,10 +34,11 @@ namespace _0912TombFuggvennyel
 
 
         }
-
+        
 
         static void Main(string[] args)
         {
+            Stack<int> verem = new Stack<int>();
             var s1 = TombGyar(25, 100, 200);
             TombLista(s1);
             var s2 = TombGyar(100, -10, 10);
@@ -48,6 +49,12 @@ namespace _0912TombFuggvennyel
             var b = 25;
             Csere(ref a, ref b);
             Console.WriteLine($"A:{a},B:{b}");
+
+            verem.Push(5);
+            verem.Push(6);
+            
+            Console.WriteLine(verem.Pop());
+
 
             Console.ReadKey();
         }
