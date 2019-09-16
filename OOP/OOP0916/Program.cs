@@ -42,7 +42,16 @@ namespace OOP0916
             Console.WriteLine($"Neme:{matyas.Neme}");
             Console.WriteLine($"Nev:{sandor.Nev}");
 
-
+            //Nem létező osztályt is lehet generáltatni!!
+            MegJobbEmber ilona = new MegJobbEmber
+            {
+                Nev="Ilona",
+                Neme="nő",
+                Kor=29,
+                Magassag=178,
+                Suly=61,
+                Hajadon=true
+            };
            
 
             Console.ReadKey();
