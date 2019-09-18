@@ -13,9 +13,9 @@ namespace OsztalyokListak
             //Írjunk programot, amely személyi adatokat generál, amelyeket azután
             //egy listában eltárolunk, és kinyerünk belőle adatokat
             //Az adatok: vezetéknév, keresztnév, születés éve, születés helye
-            var vezetekNevek =new string[] {"Kiss","Kovács","Nagy","Muhari","Kósa","Veszelovszki" };
-            var keresztNevek = new string[] {"Ágnes","Lajos","Ignác","Anita","Szilvia","István"};
-            var szuletesiHelyek = new string[] {"Békéscsaba","Bélmegyer","Lőkösháza","Szeged","Miskolc","Tatabánya","Veszprém"};
+            //var vezetekNevek =new string[] {"Kiss","Kovács","Nagy","Muhari","Kósa","Veszelovszki" };
+            //var keresztNevek = new string[] {"Ágnes","Lajos","Ignác","Anita","Szilvia","István"};
+            //var szuletesiHelyek = new string[] {"Békéscsaba","Bélmegyer","Lőkösháza","Szeged","Miskolc","Tatabánya","Veszprém"};
 
 
 
@@ -28,10 +28,7 @@ namespace OsztalyokListak
             {
                 //példányosítás
                 Szemely szemely = new Szemely(
-                    //keresztNevek[rand.Next(0, keresztNevek.Length)],
-                    //vezetekNevek[rand.Next(0,vezetekNevek.Length)],
-                    //rand.Next(1940,2020),
-                    //szuletesiHelyek[rand.Next(0,szuletesiHelyek.Length)]
+                    
                     radat.getKeresztNev(),
                     radat.getVezetekNev(),
                     radat.getSzuletesiEv(),
