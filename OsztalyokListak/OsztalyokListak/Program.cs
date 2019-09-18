@@ -19,8 +19,8 @@ namespace OsztalyokListak
 
 
 
-
-            Random rand = new Random();
+            RandomAdat radat = new RandomAdat();
+            //Random rand = new Random();
             List<Szemely> szemelyek = new List<Szemely>();
             var adatSzam = 100;
 
@@ -28,10 +28,14 @@ namespace OsztalyokListak
             {
                 //példányosítás
                 Szemely szemely = new Szemely(
-                    keresztNevek[rand.Next(0, keresztNevek.Length)],
-                    vezetekNevek[rand.Next(0,vezetekNevek.Length)],
-                    rand.Next(1940,2020),
-                    szuletesiHelyek[rand.Next(0,szuletesiHelyek.Length)]
+                    //keresztNevek[rand.Next(0, keresztNevek.Length)],
+                    //vezetekNevek[rand.Next(0,vezetekNevek.Length)],
+                    //rand.Next(1940,2020),
+                    //szuletesiHelyek[rand.Next(0,szuletesiHelyek.Length)]
+                    radat.getKeresztNev(),
+                    radat.getVezetekNev(),
+                    radat.getSzuletesiEv(),
+                    radat.getSzuletesiHely()
 
                     );
                 szemelyek.Add(szemely);
