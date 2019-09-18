@@ -18,5 +18,10 @@
             VezetekNev = vezetekNev;
         }
 
+        public int Eletkor()
+        {
+            return 2019 - SzuletesiEv;
+        }
+
     }
 }

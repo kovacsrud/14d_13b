@@ -17,6 +17,9 @@ namespace OsztalyokListak
             var keresztNevek = new string[] {"Ágnes","Lajos","Ignác","Anita","Szilvia","István"};
             var szuletesiHelyek = new string[] {"Békéscsaba","Bélmegyer","Lőkösháza","Szeged","Miskolc","Tatabánya","Veszprém"};
 
+
+
+
             Random rand = new Random();
             List<Szemely> szemelyek = new List<Szemely>();
             var adatSzam = 100;
@@ -33,7 +36,25 @@ namespace OsztalyokListak
                     );
                 szemelyek.Add(szemely);
             }
+            //Lista elemének a megjelenítése
+            //for (int i = 0; i < szemelyek.Count; i++)
+            //{
+            //    Console.WriteLine(szemelyek[i].VezetekNev);
+            //}
 
+            foreach (var s in szemelyek)
+            {
+                Console.WriteLine($"{s.VezetekNev},{s.KeresztNev},{s.Eletkor()},{s.SzuletesiHely}");
+            }
+
+            var kosak = szemelyek.FindAll(x => x.VezetekNev == "Kósa" && x.SzuletesiEv>1980);
+
+            Console.WriteLine($"Kósák száma:{kosak.Count}");
+
+            foreach (var s in kosak)
+            {
+                Console.WriteLine($"{s.VezetekNev},{s.KeresztNev},{s.SzuletesiEv},{s.SzuletesiHely}");
+            }
 
             Console.WriteLine(szemelyek.Count);
             
