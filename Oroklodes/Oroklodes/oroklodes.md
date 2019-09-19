@@ -58,3 +58,14 @@ class Allat
         }
 ```
 Az utód osztályban az ős osztály metódusait felül lehet írni, azonban ehhez az ős osztályban a felülírni kívánt metódusnál szerepelnie kell a **virtual** kulcsszónak.
+
+Ha szükség van az ős osztály paraméteres konstruktorának hívására akkor az utódban kell létrehozni egy konstruktort, és a base() függvénnyel lehet hivatkozni az ős paraméteres konstruktorára.
+```C
+public Kutya(int labakszama, string fajta,int suly) : base(suly)
+        {
+            LabakSzama = labakszama;
+            Fajta = fajta;
+        }
+```
+
+Az előbbi példában a suly paraméter értékét a base(suly) hívással az ős osztály konstruktorának adtuk át.
