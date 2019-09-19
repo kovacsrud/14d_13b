@@ -13,13 +13,14 @@ namespace Oroklodes
             Allat allat = new Allat(12);
             Allat masikAllat = new Allat();
 
-            
+            Kutya puli = new Kutya();
             Kutya kutya = new Kutya(4,"Kuvasz",15);
             
 
             allat.Eszik();
             masikAllat.Iszik();
             Console.WriteLine(kutya.ToString());
+            Console.WriteLine(puli.ToString());
 
             kutya.Eszik();
             kutya.Iszik();

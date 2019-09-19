@@ -20,6 +20,10 @@ namespace Oroklodes
             Fajta = fajta;
         }
 
+        public Kutya():base()
+        {
+        }
+
         public void Ugat()
         {
             Console.WriteLine("A kutya ugat");
