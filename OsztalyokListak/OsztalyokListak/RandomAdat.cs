@@ -10,7 +10,7 @@ namespace OsztalyokListak
     {
         public string[] VezetekNevek { get; set; }
         public string[] KeresztNevek { get; set; }
-        public string[] SzuletesiHelyek {get; set; }
+        public string[] SzuletesiHelyek { get; set; }
         public int SzuletesiEv { get; set; }
         Random rand = new Random();
 

@@ -20,6 +20,7 @@ namespace OsztalyokListak
 
 
             RandomAdat radat = new RandomAdat();
+            
             //Random rand = new Random();
             List<Szemely> szemelyek = new List<Szemely>();
             var adatSzam = 100;
