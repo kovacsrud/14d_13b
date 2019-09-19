@@ -69,3 +69,12 @@ public Kutya(int labakszama, string fajta,int suly) : base(suly)
 ```
 
 Az előbbi példában a suly paraméter értékét a base(suly) hívással az ős osztály konstruktorának adtuk át.
+
+Ha szeretenénk egyetlen függvényhívással valamilyen áttekintést adni az adott objektumról, akkor felül tudjuk írni a **ToString()** metódusát, és ebben a metódusban megadhatjuk a megfelelő információkat.
+pl.
+```C#
+ public override string ToString()
+        {
+            return $"Fajta:{Fajta},Súlya:{Suly},{LabakSzama} lába van.";
+        }
+```

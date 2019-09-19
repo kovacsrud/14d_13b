@@ -13,6 +13,7 @@ namespace Oroklodes
             Allat allat = new Allat(12);
             Allat masikAllat = new Allat();
 
+            
             Kutya kutya = new Kutya(4,"Kuvasz",15);
             
 
