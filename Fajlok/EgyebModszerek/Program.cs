@@ -11,7 +11,15 @@ namespace EgyebModszerek
     {
         static void Main(string[] args)
         {
-            var szoveg = File.ReadAllLines(@"d:/rud/9bdoga.txt",Encoding.Default);
+            string[] szoveg= { };
+
+            if (File.Exists(@"d:/rud/9bdogaaa.txt")) { 
+            szoveg = File.ReadAllLines(@"d:/rud/9bdoga.txt",Encoding.Default);
+                 }
+            else
+            {
+                Console.WriteLine("A fájl nem létezik");
+            }
 
             Console.WriteLine(szoveg[0]);
 
