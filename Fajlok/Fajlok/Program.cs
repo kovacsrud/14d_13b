@@ -109,10 +109,15 @@ namespace Fajlok
 
             var alstat = al.ToLookup(x=>new { x.Vezeteknev,x.Keresztnev });
 
-            foreach (var s in alstat)
+            foreach (var n in alstat)
             {
-                Console.WriteLine($"{s.Key.Vezeteknev},{s.Key.Keresztnev},{s.Count()}");
+                Console.WriteLine($"{ n.Key.Vezeteknev},{n.Key.Keresztnev },{ n.Count()}");
             }
+            
+
+
+            
+
 
 
             Console.ReadKey();
