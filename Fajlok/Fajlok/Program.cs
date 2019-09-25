@@ -113,8 +113,30 @@ namespace Fajlok
             {
                 Console.WriteLine($"{ n.Key.Vezeteknev},{n.Key.Keresztnev },{ n.Count()}");
             }
-            
 
+            //Kiírás fájlba
+            try
+            {
+                FileStream outFajl = new FileStream($"d:/eredmeny.txt",FileMode.Create);
+
+                using (StreamWriter sw = new StreamWriter(outFajl, Encoding.Default))
+                {
+                    foreach (var a in al)
+                    {
+                        sw.WriteLine($"{a.Vezeteknev},{a.Keresztnev},{a.SzuletesEve},{a.Szuletesihely}");
+                    }
+                }
+
+              
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                
+            }
 
             
 
