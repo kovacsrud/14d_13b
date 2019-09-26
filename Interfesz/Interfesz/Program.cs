@@ -27,6 +27,11 @@ namespace Interfesz
             }
             var osszkerulet = sikidomok.Sum(x => x.Kerulet());
             var osszterulet = sikidomok.Sum(x=>x.Terulet());
+            
+            //kiválogatás típus szerint
+            var korkerulet = sikidomok.Where(x => x.GetType() == typeof(Kor)).Sum(x=>x.Kerulet());
+
+            Console.WriteLine($"Körök kerülete:{korkerulet}");
 
             Console.WriteLine($"Össz. kerület:{osszkerulet},Össz. terület:{osszterulet}");
 
