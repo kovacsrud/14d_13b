@@ -48,7 +48,7 @@ namespace Stadion
                 varosnev = Console.ReadLine();
             }
 
-
+            
             if (stadionok.Any(x=>x.varos.ToLower()==varosnev.ToLower()))
             {
                 Console.WriteLine("8.feladat: A város vb helyszín!");
