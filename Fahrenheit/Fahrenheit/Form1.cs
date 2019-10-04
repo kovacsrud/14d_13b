@@ -13,11 +13,15 @@ namespace Fahrenheit
 {
     public partial class formFokszamitas : Form
     {
+        List<string> helyisegek = new List<string>() { "Gyula", "Orosháza", "Tompa" };
+
         public formFokszamitas()
         {
             InitializeComponent();
             radioButtonFahrenheit.Checked = true;
             labelFokjel.Text = "F";
+            comboBoxLista.Items.Clear();
+            comboBoxLista.Items.AddRange(helyisegek.ToArray());
         }
 
         private void radioButtonFahrenheit_Click(object sender, EventArgs e)

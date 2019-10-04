@@ -35,6 +35,7 @@
             this.textBoxFok = new System.Windows.Forms.TextBox();
             this.buttonSzamol = new System.Windows.Forms.Button();
             this.labelEredmeny = new System.Windows.Forms.Label();
+            this.comboBoxLista = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // radioButtonCelsius
@@ -108,11 +109,24 @@
             this.labelEredmeny.Size = new System.Drawing.Size(0, 31);
             this.labelEredmeny.TabIndex = 6;
             // 
+            // comboBoxLista
+            // 
+            this.comboBoxLista.FormattingEnabled = true;
+            this.comboBoxLista.Items.AddRange(new object[] {
+            "egy",
+            "kettő",
+            "három"});
+            this.comboBoxLista.Location = new System.Drawing.Point(49, 118);
+            this.comboBoxLista.Name = "comboBoxLista";
+            this.comboBoxLista.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxLista.TabIndex = 7;
+            // 
             // formFokszamitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 261);
+            this.Controls.Add(this.comboBoxLista);
             this.Controls.Add(this.labelEredmeny);
             this.Controls.Add(this.buttonSzamol);
             this.Controls.Add(this.textBoxFok);
@@ -136,6 +150,7 @@
         private System.Windows.Forms.TextBox textBoxFok;
         private System.Windows.Forms.Button buttonSzamol;
         private System.Windows.Forms.Label labelEredmeny;
+        private System.Windows.Forms.ComboBox comboBoxLista;
     }
 }
 
