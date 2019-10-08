@@ -13,7 +13,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*" MinWidth="150" MaxWidth="200" />
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
@@ -55,7 +55,15 @@
             <Button Content="Butt" Margin="5" />
             <Button Content="Butt" Margin="5" />
         </StackPanel>
-        
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <Button Content="Felül" Margin="5" DockPanel.Dock="Top"/>
+            <Button Content="Lent" Margin="5" DockPanel.Dock="Bottom"/>
+            <Button Content="BAL" Margin="5" DockPanel.Dock="Left"/>
+           
+            
+            <Button Content="JOBB" Margin="5" DockPanel.Dock="Right"/>
+            <Button Content="Középen" Margin="5"/>
+        </DockPanel>
 
     </Grid>
 </Window>
