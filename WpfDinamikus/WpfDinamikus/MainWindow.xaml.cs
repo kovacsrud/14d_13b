@@ -23,6 +23,22 @@ namespace WpfDinamikus
         public MainWindow()
         {
             InitializeComponent();
+            SokLabel(100);
+        }
+
+        public void SokLabel(int db)
+        {
+            for (int i = 0; i < db; i++)
+            {
+                //címkét hozunk létre futási időben
+                Label label = new Label();
+                //pár tulajdonságát beállítjuk
+                label.Content = i + 1;
+                label.FontSize = 16;
+                label.Margin = new Thickness(5);
+                //hozzá kell adni ahhoz az elemhez amely tartalmazni fogja a címkét
+                elemek.Children.Add(label);
+            }
         }
     }
 }

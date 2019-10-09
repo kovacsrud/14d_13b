@@ -14,5 +14,9 @@
         <WrapPanel x:Name="elemek" Grid.Row="0" >
             
         </WrapPanel>
+        <Label x:Name="aktualisCimke"
+               FontSize="20"
+               HorizontalAlignment="Center"
+               HorizontalContentAlignment="Center" Grid.Row="1" />
     </Grid>
 </Window>
