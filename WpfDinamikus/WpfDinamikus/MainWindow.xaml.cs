@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,20 @@ namespace WpfDinamikus
             SokLabel(100);
         }
 
+        //eseménykezelő függvény, amit majd létrehozáskor hozzárendelünk
+        //minden címkéhez
+        public void AktLabel(object sender,RoutedEventArgs e)
+        {
+            //a küldő azonosítása
+            Label label = (Label)sender;
+                     
+            label.Background = Brushes.Red;
+            aktualisCimke.Content = label.Content;
+            elemek.Children.Remove(label);
+
+        }
+
+
         public void SokLabel(int db)
         {
             for (int i = 0; i < db; i++)
@@ -36,6 +51,7 @@ namespace WpfDinamikus
                 label.Content = i + 1;
                 label.FontSize = 16;
                 label.Margin = new Thickness(5);
+                label.MouseDown += AktLabel;
                 //hozzá kell adni ahhoz az elemhez amely tartalmazni fogja a címkét
                 elemek.Children.Add(label);
             }
