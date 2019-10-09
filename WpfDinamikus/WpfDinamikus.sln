@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDinamikus", "WpfDinamikus\WpfDinamikus.csproj", "{82692614-56C1-47CF-BEF8-B9873A2179E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idomeres", "Idomeres\Idomeres.csproj", "{BED451A1-F941-42F7-BE19-265D1E7F5989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{82692614-56C1-47CF-BEF8-B9873A2179E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82692614-56C1-47CF-BEF8-B9873A2179E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82692614-56C1-47CF-BEF8-B9873A2179E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED451A1-F941-42F7-BE19-265D1E7F5989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED451A1-F941-42F7-BE19-265D1E7F5989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED451A1-F941-42F7-BE19-265D1E7F5989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED451A1-F941-42F7-BE19-265D1E7F5989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
