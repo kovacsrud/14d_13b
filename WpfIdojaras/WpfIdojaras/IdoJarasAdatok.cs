@@ -54,5 +54,33 @@ namespace WpfIdojaras
         {
             return adatlista.Count;
         }
+
+        public List<int> GetEvek()
+        {
+            List<int> evek = new List<int>();
+
+            var evekegyszer = adatlista.ToLookup(x=>x.Ev);
+
+            foreach (var e in evekegyszer)
+            {
+                evek.Add(e.Key);
+            }
+           
+
+            return evek;
+        }
+
+        public List<int> GetHonapok(int ev)
+        {
+            List<int> honapok = new List<int>();
+            var honapokegyszer = adatlista.Where(x => x.Ev == ev).ToLookup(x=>x.Honap);
+
+            foreach (var h in honapokegyszer)
+            {
+                honapok.Add(h.Key);
+            }
+
+            return honapok;
+        }
     }
 }

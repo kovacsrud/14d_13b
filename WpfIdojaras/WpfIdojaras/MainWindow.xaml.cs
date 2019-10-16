@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,10 @@ namespace WpfIdojaras
         public MainWindow()
         {
             InitializeComponent();
+
             IdoJarasAdatok idoadatok = new IdoJarasAdatok(@"d:/rud/idojaras.csv");
+            Debug.WriteLine(idoadatok.GetLength());
+            evek.ItemsSource = idoadatok.GetEvek();
         }
     }
 }
