@@ -59,7 +59,7 @@ namespace WpfIdojaras
         {
             List<int> evek = new List<int>();
 
-            var evekegyszer = adatlista.ToLookup(x=>x.Ev);
+            var evekegyszer = adatlista.ToLookup(x=>x.Ev).OrderBy(x=>x.Key);
 
             foreach (var e in evekegyszer)
             {
@@ -73,7 +73,7 @@ namespace WpfIdojaras
         public List<int> GetHonapok(int ev)
         {
             List<int> honapok = new List<int>();
-            var honapokegyszer = adatlista.Where(x => x.Ev == ev).ToLookup(x=>x.Honap);
+            var honapokegyszer = adatlista.Where(x => x.Ev == ev).ToLookup(x=>x.Honap).OrderBy(x => x.Key);
 
             foreach (var h in honapokegyszer)
             {

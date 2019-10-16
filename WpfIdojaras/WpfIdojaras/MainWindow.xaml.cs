@@ -21,13 +21,23 @@ namespace WpfIdojaras
     /// </summary>
     public partial class MainWindow : Window
     {
+        IdoJarasAdatok idoadatok;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            IdoJarasAdatok idoadatok = new IdoJarasAdatok(@"d:/rud/idojaras.csv");
+            idoadatok = new IdoJarasAdatok(@"d:/rud/idojaras.csv");
             Debug.WriteLine(idoadatok.GetLength());
+            evek.SelectionChanged += KivalasztottEv;
+
             evek.ItemsSource = idoadatok.GetEvek();
+        }
+
+        public void KivalasztottEv(object sender,RoutedEventArgs e)
+        {
+            honapok.ItemsSource = idoadatok.GetHonapok(Convert.ToInt32(evek.SelectedItem));
+            honapok.Items.Refresh();
         }
     }
 }
