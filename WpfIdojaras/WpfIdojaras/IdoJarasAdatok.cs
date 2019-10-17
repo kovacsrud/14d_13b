@@ -96,5 +96,20 @@ namespace WpfIdojaras
 
             return napok;
         }
+
+        public List<IdoJarasAdat> GetRacsAdatok(int ev, int honap,int nap)
+        {
+            return adatlista.FindAll(x=>x.Ev==ev && x.Honap==honap && x.Nap==nap);
+        }
+
+        public List<IdoJarasAdat> GetRacsAdatok(int ev, int honap)
+        {
+            return adatlista.FindAll(x => x.Ev == ev && x.Honap == honap);
+        }
+
+        public List<IdoJarasAdat> GetRacsAdatok(int ev)
+        {
+            return adatlista.FindAll(x => x.Ev == ev);
+        }
     }
 }

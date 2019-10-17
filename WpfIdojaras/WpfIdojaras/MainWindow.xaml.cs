@@ -31,6 +31,7 @@ namespace WpfIdojaras
             Debug.WriteLine(idoadatok.GetLength());
             evek.SelectionChanged += KivalasztottEv;
             honapok.SelectionChanged += KivalasztottHonap;
+            napok.SelectionChanged += KivalasztottNap;
 
             evek.ItemsSource = idoadatok.GetEvek();
         }
@@ -39,12 +40,19 @@ namespace WpfIdojaras
         {
             honapok.ItemsSource = idoadatok.GetHonapok(Convert.ToInt32(evek.SelectedItem));
             honapok.Items.Refresh();
+            adatRacs.ItemsSource = idoadatok.GetRacsAdatok(Convert.ToInt32(evek.SelectedItem));
         }
 
         public void KivalasztottHonap(object sender,RoutedEventArgs e)
         {
             napok.ItemsSource = idoadatok.
             GetNapok(Convert.ToInt32(evek.SelectedItem), Convert.ToInt32(honapok.SelectedItem));
+            adatRacs.ItemsSource = idoadatok.GetRacsAdatok(Convert.ToInt32(evek.SelectedItem), Convert.ToInt32(honapok.SelectedItem));
+
+        }
+        public void KivalasztottNap(object sender, RoutedEventArgs e)
+        {
+            adatRacs.ItemsSource = idoadatok.GetRacsAdatok(Convert.ToInt32(evek.SelectedItem), Convert.ToInt32(honapok.SelectedItem),Convert.ToInt32(napok.SelectedItem));
         }
     }
 }
