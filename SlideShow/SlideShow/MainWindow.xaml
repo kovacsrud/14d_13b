@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="kep" />
+        <Button x:Name="buttonLoad" Content="Betöltés" Grid.Row="1" Click="buttonLoad_Click" />
     </Grid>
 </Window>
