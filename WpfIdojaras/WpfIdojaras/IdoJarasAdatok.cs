@@ -82,5 +82,19 @@ namespace WpfIdojaras
 
             return honapok;
         }
+
+        public List<int> GetNapok(int ev,int honap)
+        {
+            List<int> napok = new List<int>();
+            var napokegyszer = adatlista.Where(x => x.Ev == ev && x.Honap==honap).
+                ToLookup(x => x.Nap).OrderBy(x => x.Key);
+
+            foreach (var n in napokegyszer)
+            {
+                napok.Add(n.Key);
+            }
+
+            return napok;
+        }
     }
 }
