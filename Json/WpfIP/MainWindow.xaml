@@ -8,12 +8,14 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBox x:Name="textboxIP" FontSize="30"  />
-        <StackPanel x:Name="stackData" Grid.Row="1">
-            
+        <StackPanel x:Name="stackData" Grid.Row="1" >
+
         </StackPanel>
+        <Image x:Name="imageDown" Grid.Row="2" />
     </Grid>
 </Window>

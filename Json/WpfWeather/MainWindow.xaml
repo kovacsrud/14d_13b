@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfWeather.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfWeather"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel>
+        <TextBox x:Name="textboxTelepules" FontSize="30" MinWidth="250" />
+            <Button x:Name="buttonLekerdez" Content="Lekérdezés" Click="buttonLekerdez_Click" />
+        </WrapPanel>
+        <StackPanel x:Name="stackIdoAdatok" Grid.Row="1">
+            
+        </StackPanel>
+        <Image x:Name="imageWeather" Grid.Row="2" />
+
+    </Grid>
+</Window>

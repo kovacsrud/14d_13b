@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -35,6 +36,8 @@ namespace WpfIP
             stackData.Children.Add(DataToLabel((string)ipData["continent_name"]));
             stackData.Children.Add(DataToLabel((string)ipData["country_name"]));
             stackData.Children.Add(DataToLabel((string)ipData["city"]));
+
+            imageDown.Source = DownPic("http://bekszi.hu/userfiles/Linux_meghivo_WEB.jpg");
         }
 
         public void GetIPData(string ip)
@@ -47,6 +50,23 @@ namespace WpfIP
             Label label = new Label();
             label.Content = data;
             return label;
+        }
+
+        public BitmapImage DownPic(string url)
+        {
+            WebClient imgClient = new WebClient();
+            BitmapImage img = new BitmapImage();
+
+            byte[] imgdata = imgClient.DownloadData(url);
+
+            MemoryStream ms = new MemoryStream(imgdata);
+
+            img.BeginInit();
+            img.StreamSource = ms;
+            img.EndInit();
+
+
+            return img;
         }
 
     }

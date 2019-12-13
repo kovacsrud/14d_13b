@@ -29,10 +29,10 @@ namespace Json
 
             JsonTextReader reader = new JsonTextReader(new StringReader(json));
 
-            //while (reader.Read())
-            //{
-            //    Console.WriteLine($"{reader.TokenType},{reader.ValueType},{reader.Value}");
-            //}
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader.TokenType},{reader.ValueType},{reader.Value}");
+            }
 
             JObject colors = JObject.Parse(json);
 
