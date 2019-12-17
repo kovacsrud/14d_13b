@@ -70,7 +70,7 @@ namespace WpfWeather
                     stackIdoAdatok.Children.Add(WLabel($"Napnyugta:{DateTimeOffset.FromUnixTimeSeconds((long)weatherData["sys"]["sunset"]).DateTime.AddHours(1)}"));
 
 
-                    imageWeather.Source = DownPic($"https://tile.openweathermap.org/map/temp_new/{3}/{2}/{1}.png?appid={apiKey}");
+                    //imageWeather.Source = DownPic($"https://tile.openweathermap.org/map/temp_new/{3}/{2}/{1}.png?appid={apiKey}");
                 }
                 catch (Exception ex)
                 {
@@ -104,6 +104,20 @@ namespace WpfWeather
 
 
             return img;
+        }
+
+        private void buttonTerkep_Click(object sender, RoutedEventArgs e)
+        {
+            Window win = new Window();
+            win.Width = 1024;
+            win.Height = 768;
+            Image terkep = new Image();
+            terkep.Source= DownPic($"https://tile.openweathermap.org/map/temp_new/{3}/{2}/{1}.png?appid={apiKey}");
+            win.Content = terkep;
+
+            win.Show();
+
+            
         }
     }
 }
