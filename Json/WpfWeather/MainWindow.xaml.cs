@@ -65,6 +65,11 @@ namespace WpfWeather
                     stackIdoAdatok.Children.Add(WLabel($"Hőérzet: {Convert.ToString(weatherData["main"]["feels_like"])}"));
                     stackIdoAdatok.Children.Add(WLabel($"Minimum: {Convert.ToString(weatherData["main"]["temp_min"])}"));
                     stackIdoAdatok.Children.Add(WLabel($"Maximum: {Convert.ToString(weatherData["main"]["temp_max"])}"));
+                    stackIdoAdatok.Children.Add(WLabel($"Időpont:{DateTimeOffset.FromUnixTimeSeconds((long)weatherData["dt"]).DateTime.AddHours(1)}"));
+                    stackIdoAdatok.Children.Add(WLabel($"Napkelte:{DateTimeOffset.FromUnixTimeSeconds((long)weatherData["sys"]["sunrise"]).DateTime.AddHours(1)}"));
+                    stackIdoAdatok.Children.Add(WLabel($"Napnyugta:{DateTimeOffset.FromUnixTimeSeconds((long)weatherData["sys"]["sunset"]).DateTime.AddHours(1)}"));
+
+
                     imageWeather.Source = DownPic($"https://tile.openweathermap.org/map/temp_new/{3}/{2}/{1}.png?appid={apiKey}");
                 }
                 catch (Exception ex)
