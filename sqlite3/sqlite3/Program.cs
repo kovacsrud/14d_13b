@@ -71,6 +71,29 @@ namespace sqlite3
 
             }
 
+            //update
+            using (SQLiteConnection db_connect = new SQLiteConnection(connectionString))
+            {
+                db_connect.Open();
+                using (SQLiteCommand sqlc = new SQLiteCommand())
+                {
+                    //string sqlComm = "INSERT INTO idojarasadatok (ev,honap,nap,ora,homerseklet,szelsebesseg,paratartalom) values(2020,1,1,0,12,13,14)";
+                    string sqlComm = "UPDATE idojarasadatok SET ev=@upev WHERE ev=@ev";
+                    sqlc.Connection = db_connect;
+                    sqlc.CommandText = sqlComm;
+                    sqlc.Parameters.Add("@ev", DbType.Int32).Value = 2020;
+                    sqlc.Parameters.Add("@upev", DbType.Int32).Value = 2021;
+                    
+
+
+                    var sor = sqlc.ExecuteNonQuery();
+                    Console.WriteLine($"{sor} módosítva.");
+
+                }
+
+
+            }
+
             Console.ReadKey();
         }
     }
