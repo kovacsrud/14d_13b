@@ -77,7 +77,7 @@ namespace sqlite3
                 db_connect.Open();
                 using (SQLiteCommand sqlc = new SQLiteCommand())
                 {
-                    //string sqlComm = "INSERT INTO idojarasadatok (ev,honap,nap,ora,homerseklet,szelsebesseg,paratartalom) values(2020,1,1,0,12,13,14)";
+                   
                     string sqlComm = "UPDATE idojarasadatok SET ev=@upev WHERE ev=@ev";
                     sqlc.Connection = db_connect;
                     sqlc.CommandText = sqlComm;
@@ -88,6 +88,26 @@ namespace sqlite3
 
                     var sor = sqlc.ExecuteNonQuery();
                     Console.WriteLine($"{sor} módosítva.");
+
+                }
+
+
+            }
+
+            //delete
+            using (SQLiteConnection db_connect = new SQLiteConnection(connectionString))
+            {
+                db_connect.Open();
+                using (SQLiteCommand sqlc = new SQLiteCommand())
+                {
+                    
+                    string sqlComm = "DELETE FROM idojarasadatok WHERE ev>@ev";
+                    sqlc.Connection = db_connect;
+                    sqlc.CommandText = sqlComm;
+                    sqlc.Parameters.Add("@ev", DbType.Int32).Value = 2016;
+                   
+                    var sor = sqlc.ExecuteNonQuery();
+                    Console.WriteLine($"{sor} törölve.");
 
                 }
 
