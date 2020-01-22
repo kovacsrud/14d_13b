@@ -27,13 +27,37 @@ namespace WpfDataAdapter
             InitializeComponent();
             adapter = new Adapter("Data Source=idojarasadatok.db;Version=3");
             adatok.ItemsSource = adapter.GetData().DefaultView;
+            adatok.RowEditEnding += ColorTheRow;
 
         }
 
         private void buttonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            adapter.UpdateData();
-            adatok.Items.Refresh();
+            try
+            {
+                adapter.UpdateData();
+                adatok.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        public void ColorTheRow(object sender,DataGridRowEditEndingEventArgs e)
+        {
+            e.Row.Background = Brushes.Magenta;
+        }
+
+
+        public void hide_rowid(object sender,DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.Column.Header.ToString()=="rowid")
+            {
+                e.Column.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="adatok" ColumnWidth="*" />
+        <DataGrid x:Name="adatok" ColumnWidth="*"  AutoGeneratingColumn="hide_rowid"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
             <Button x:Name="buttonUpdate" Content="Update" Click="buttonUpdate_Click"  />
         </StackPanel>
