@@ -25,13 +25,27 @@ namespace Kutyak
             var nevvel = kutyak.Join(kutyanevek,
                 k=>k.NevId,
                 kn=>kn.Id,
-                (k,kn)=>new {Kutyanev=kn.KutyaNeve,Idopont=k.UtolsoVizsgalat});
+                (k,kn)=>new {Kor=k.Eletkor,Kutyanev=kn.KutyaNeve,FajtaId=k.FajtaId});
+
+            var osszes = nevvel.Join(kutyafajtak,
+                        n=>n.FajtaId,
+                        kf=>kf.Id,
+                        (n, kf) =>new {Kor=n.Kor,Kutyanev=n.Kutyanev,Fajta=kf.Nev }
+                );
+
+
+            foreach (var i in osszes)
+            {
+               // Console.WriteLine($"{i.Kor},{i.Kutyanev},{i.Fajta}");
+            }
+
+            var legoregebb = osszes.Where(x => x.Kor==osszes.Max(y=>y.Kor));
+
 
             
-            foreach (var i in nevvel)
-            {
-                Console.WriteLine($"{i.Idopont},{i.Kutyanev}");
-            }
+            
+
+            
 
             Console.ReadKey();
 
