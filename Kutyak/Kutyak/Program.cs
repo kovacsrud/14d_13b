@@ -41,6 +41,15 @@ namespace Kutyak
 
             var legoregebb = osszes.Where(x => x.Kor==osszes.Max(y=>y.Kor));
 
+            
+            //A legöregebb kutya adatainak kiíratása
+            //első elem
+            Console.WriteLine(legoregebb.ElementAt(0));
+            //az első elem másképpen
+            Console.WriteLine($"{legoregebb.First().Fajta},{legoregebb.First().Kor},{legoregebb.First().Kutyanev}");
+
+            
+
 
             
             
