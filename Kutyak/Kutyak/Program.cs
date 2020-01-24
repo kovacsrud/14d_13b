@@ -22,6 +22,17 @@ namespace Kutyak
 
             Console.WriteLine($"{kutyanevek.Count},{kutyafajtak.Count},{kutyak.Count}");
 
+            var nevvel = kutyak.Join(kutyanevek,
+                k=>k.NevId,
+                kn=>kn.Id,
+                (k,kn)=>new {Kutyanev=kn.KutyaNeve,Idopont=k.UtolsoVizsgalat});
+
+            
+            foreach (var i in nevvel)
+            {
+                Console.WriteLine($"{i.Idopont},{i.Kutyanev}");
+            }
+
             Console.ReadKey();
 
         }
