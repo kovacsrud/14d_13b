@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid x:Name="adatok" ColumnWidth="*" />
+        <DataGrid x:Name="adatok" ColumnWidth="*" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Életkor" Binding="{Binding eletkor}" />
+                <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding utolsoellenorzes}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
