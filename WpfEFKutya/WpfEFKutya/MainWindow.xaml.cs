@@ -27,7 +27,10 @@ namespace WpfEFKutya
             InitializeComponent();
             kutyacontext = new KutyaContext();
             kutyacontext.Kutyak.Load();
-            adatok.ItemsSource = kutyacontext.Kutyak.Local;
+            kutyacontext.Kutyanevek.Load();
+            kutyacontext.Kutyafajtak.Load();
+            DataContext= kutyacontext.Kutyak.Local;
+            //adatok.ItemsSource = kutyacontext.Kutyak.Local;
 
         }
     }
