@@ -32,7 +32,9 @@ namespace WpfEFKutya
             DataContext= kutyacontext.Kutyak.Local;
             kutyanevAdatok.DataContext = kutyacontext.Kutyanevek.Local;
             kutyafajtaAdatok.DataContext = kutyacontext.Kutyafajtak.Local;
-           
+            comboFelKutyanev.ItemsSource= kutyacontext.Kutyanevek.Local;
+            comboFelKutyafajta.ItemsSource= kutyacontext.Kutyafajtak.Local;
+
 
         }
 
