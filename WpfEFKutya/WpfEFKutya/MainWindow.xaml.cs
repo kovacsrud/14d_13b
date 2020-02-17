@@ -31,7 +31,8 @@ namespace WpfEFKutya
             kutyacontext.Kutyafajtak.Load();
             DataContext= kutyacontext.Kutyak.Local;
             kutyanevAdatok.DataContext = kutyacontext.Kutyanevek.Local;
-            //adatok.ItemsSource = kutyacontext.Kutyak.Local;
+            kutyafajtaAdatok.DataContext = kutyacontext.Kutyafajtak.Local;
+           
 
         }
 
@@ -47,6 +48,19 @@ namespace WpfEFKutya
                 MessageBox.Show("Nem törölhető!");
             }
             
+        }
+
+        private void buttonKfUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                kutyacontext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Nem törölhető!");
+            }
         }
     }
 }
