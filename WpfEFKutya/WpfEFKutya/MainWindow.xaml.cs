@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace WpfEFKutya
 {
@@ -63,6 +64,23 @@ namespace WpfEFKutya
 
                 MessageBox.Show("Nem törölhető!");
             }
+        }
+
+        private void buttonUjKezeles_Click(object sender, RoutedEventArgs e)
+        {
+            Kutyak ujkutya = new Kutyak {
+                nevid = Convert.ToInt32(comboFelKutyanev.SelectedValue),
+                fajtaid = Convert.ToInt32(comboFelKutyafajta.SelectedValue),
+                eletkor = Convert.ToInt32(textBoxEletkor.Text),
+                utolsoellenorzes=Convert.ToDateTime(textBoxUtolsoEllenorzes.Text)
+
+            };
+
+            kutyacontext.Kutyak.Add(ujkutya);
+            kutyacontext.SaveChanges();
+
+            Debug.WriteLine(comboFelKutyanev.SelectedValue);
+            Debug.WriteLine(comboFelKutyafajta.SelectedValue);
         }
     }
 }

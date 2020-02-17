@@ -68,11 +68,16 @@
                     <TextBox x:Name="textBoxUtolsoEllenorzes" MinWidth="30" Grid.Column="1"/>
                     <ComboBox x:Name="comboFelKutyanev" Grid.Column="2"
                               DisplayMemberPath="kutyanev"
-                              SelectedValuePath="Id"
+                              SelectedValuePath="id"
                               SelectedIndex="0"
                               />
-                    <ComboBox x:Name="comboFelKutyafajta" Grid.Column="3" />
-                    <Button x:Name="buttonUjKezeles" Content="Rögzítés" Grid.Row="1" Margin="20" Grid.ColumnSpan="4"/>
+                    <ComboBox x:Name="comboFelKutyafajta" Grid.Column="3"
+                              DisplayMemberPath="nev"
+                              SelectedValuePath="id"
+                              SelectedIndex="0"
+                              
+                              />
+                    <Button x:Name="buttonUjKezeles" Content="Rögzítés" Grid.Row="1" Margin="20" Grid.ColumnSpan="4" Click="buttonUjKezeles_Click"/>
                 </Grid>
                 
             </TabItem>
