@@ -68,16 +68,23 @@ namespace WpfEFKutya
 
         private void buttonUjKezeles_Click(object sender, RoutedEventArgs e)
         {
-            Kutyak ujkutya = new Kutyak {
-                nevid = Convert.ToInt32(comboFelKutyanev.SelectedValue),
-                fajtaid = Convert.ToInt32(comboFelKutyafajta.SelectedValue),
-                eletkor = Convert.ToInt32(textBoxEletkor.Text),
-                utolsoellenorzes=Convert.ToDateTime(textBoxUtolsoEllenorzes.Text)
+            try
+            {
+                Kutyak ujkutya = new Kutyak
+                {
+                    nevid = Convert.ToInt32(comboFelKutyanev.SelectedValue),
+                    fajtaid = Convert.ToInt32(comboFelKutyafajta.SelectedValue),
+                    eletkor = Convert.ToInt32(textBoxEletkor.Text),
+                    utolsoellenorzes = Convert.ToDateTime(textBoxUtolsoEllenorzes.Text)
 
-            };
+                };
 
-            kutyacontext.Kutyak.Add(ujkutya);
-            kutyacontext.SaveChanges();
+                kutyacontext.Kutyak.Add(ujkutya);
+                kutyacontext.SaveChanges();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Hiba!");
+            }
 
             Debug.WriteLine(comboFelKutyanev.SelectedValue);
             Debug.WriteLine(comboFelKutyafajta.SelectedValue);
