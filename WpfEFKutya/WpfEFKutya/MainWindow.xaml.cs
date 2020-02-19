@@ -35,6 +35,8 @@ namespace WpfEFKutya
             kutyafajtaAdatok.DataContext = kutyacontext.Kutyafajtak.Local;
             comboFelKutyanev.ItemsSource= kutyacontext.Kutyanevek.Local;
             comboFelKutyafajta.ItemsSource= kutyacontext.Kutyafajtak.Local;
+            comboModKutyanev.ItemsSource = kutyacontext.Kutyanevek.Local;
+            comboModKutyafajta.ItemsSource = kutyacontext.Kutyafajtak.Local;
 
 
         }
@@ -88,6 +90,41 @@ namespace WpfEFKutya
 
             Debug.WriteLine(comboFelKutyanev.SelectedValue);
             Debug.WriteLine(comboFelKutyafajta.SelectedValue);
+        }
+
+        private void GridAdatChanged(object sender,SelectionChangedEventArgs e)
+        {
+            Kutyak selectedKutya = (Kutyak)adatok.SelectedItem;
+            textBoxModId.Text = Convert.ToString(selectedKutya.id);
+            textBoxModEletkor.Text = Convert.ToString(selectedKutya.eletkor);
+            textBoxModUtolsoEllenorzes.Text = Convert.ToString(selectedKutya.utolsoellenorzes);
+            comboModKutyanev.SelectedValue = selectedKutya.nevid;
+            comboModKutyafajta.SelectedValue = selectedKutya.fajtaid;
+        }
+
+        private void buttonModKezeles_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var modositas = kutyacontext.Kutyak.Local.Where(x => x.id == Convert.ToInt32(textBoxModId.Text));
+                modositas.First().nevid = Convert.ToInt32(comboModKutyanev.SelectedValue);
+                modositas.First().fajtaid = Convert.ToInt32(comboModKutyafajta.SelectedValue);
+                modositas.First().eletkor = Convert.ToInt32(textBoxModEletkor.Text);
+                modositas.First().utolsoellenorzes = Convert.ToDateTime(textBoxModUtolsoEllenorzes.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Hiba!");
+            }
+            
+
+            kutyacontext.SaveChanges();
+        }
+
+        private void buttonKereses_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
