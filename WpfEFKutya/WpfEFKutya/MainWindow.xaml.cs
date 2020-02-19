@@ -124,6 +124,38 @@ namespace WpfEFKutya
 
         private void buttonKereses_Click(object sender, RoutedEventArgs e)
         {
+            keresesGrid.Items.Clear();
+            IEnumerable<Kutyak> talalatok = new List<Kutyak>();
+
+            if (keresKutyanev.Text.Length>0 && keresKutyafajta.Text.Length>0)
+            {
+                talalatok = kutyacontext.Kutyak.Local.Where(x=>x.Kutyanevek.kutyanev==keresKutyanev.Text && x.Kutyafajtak.nev==keresKutyafajta.Text);
+            }
+            else if (keresKutyanev.Text.Length > 0)
+            {
+                talalatok = kutyacontext.Kutyak.Local.Where(x => x.Kutyanevek.kutyanev == keresKutyanev.Text);
+            }
+            else if (keresKutyafajta.Text.Length > 0)
+            {
+                talalatok = kutyacontext.Kutyak.Local.Where(x => x.Kutyafajtak.nev == keresKutyafajta.Text);
+            }
+            else
+            {
+                MessageBox.Show("Nincs adat!");
+            }
+
+            if (talalatok.Count()>0)
+            {
+                foreach (var i in talalatok)
+                {
+                    keresesGrid.Items.Add(i);
+                }
+
+            } else
+            {
+                MessageBox.Show("Nincs adat!");
+            }
+
 
         }
     }
