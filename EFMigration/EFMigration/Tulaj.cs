@@ -16,6 +16,7 @@ namespace EFMigration
         public string Vezeteknev { get; set; }
         public string Keresztnev { get; set; }
         public int SzuletesiEv { get; set; }
+     
         public virtual Auto auto { get; set; }
     }
 }
