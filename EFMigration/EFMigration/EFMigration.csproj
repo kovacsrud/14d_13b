@@ -61,9 +61,18 @@
     <Compile Include="Migrations\202002200722199_start.designer.cs">
       <DependentUpon>202002200722199_start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002200752552_tipus_hozzaadas.cs" />
+    <Compile Include="Migrations\202002200752552_tipus_hozzaadas.designer.cs">
+      <DependentUpon>202002200752552_tipus_hozzaadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002200801481_tulaj_hozzaadas.cs" />
+    <Compile Include="Migrations\202002200801481_tulaj_hozzaadas.designer.cs">
+      <DependentUpon>202002200801481_tulaj_hozzaadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tulaj.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,6 +81,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002200722199_start.resx">
       <DependentUpon>202002200722199_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002200752552_tipus_hozzaadas.resx">
+      <DependentUpon>202002200752552_tipus_hozzaadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002200801481_tulaj_hozzaadas.resx">
+      <DependentUpon>202002200801481_tulaj_hozzaadas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

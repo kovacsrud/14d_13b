@@ -11,9 +11,15 @@ namespace EFMigration
     [Table("Auto")]
     public class Auto
     {
+        public Auto()
+        {
+            Tulajok = new HashSet<Tulaj>();
+        }
         [Key]
         public int Id { get; set; }
         public string Gyartmany { get; set; }
+        public string Tipus { get; set; }
         public int GyartasiEv { get; set; }
+        public virtual ICollection<Tulaj> Tulajok { get; set; }
     }
 }
