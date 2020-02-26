@@ -39,6 +39,7 @@ namespace Alapmuveletek.Test
             var alap = new Alapmuvelet();
             Assert.IsNotNull(alap.Szoroz(6, 6));
             Assert.AreEqual(50, alap.Szoroz(10, 5));
+            
 
         }
 
