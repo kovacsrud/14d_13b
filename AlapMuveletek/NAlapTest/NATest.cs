@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using AlapMuveletek;
 
+
 namespace NAlapTest
 {
     [TestFixture]
@@ -18,6 +19,14 @@ namespace NAlapTest
 
             Assert.IsNotNull(sut);
             Assert.AreEqual(elvart,sut.Osszead(a,b),0.03);
+        }
+
+        [Test]
+        
+        public void OsztasNullaval()
+        {
+            var sut = new Alapmuvelet();
+            Assert.Throws<ArgumentException>(() => sut.Oszt(10,0));
         }
     }
 }

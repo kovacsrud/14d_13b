@@ -25,7 +25,14 @@ namespace AlapMuveletek
 
         public double Oszt(double a,double b)
         {
-            return a / b;
+            if (b==0)
+            {
+                throw new ArgumentException();
+            } else
+            {
+                return a / b;
+            }
+            
         }
     }
 }
