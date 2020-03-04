@@ -40,7 +40,7 @@ namespace Haromszog
                     bOldal = value;
                 } else
                 {
-                    throw new HaromszogHiba("A b oldal nem lehet 0");
+                    throw new HaromszogHiba("A b oldal nem lehet 0!");
                 }
             }
         }
