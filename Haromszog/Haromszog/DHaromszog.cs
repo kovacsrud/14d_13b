@@ -130,19 +130,19 @@ namespace Haromszog
             b = Convert.ToDouble(e[1]);
             c = Convert.ToDouble(e[2]);
 
-            if (!EllDerekszogu)
+            if (!EllNovekvoSorrend)
             {
-                throw new HaromszogHiba("Ez nem derékszögű!");
+                throw new HaromszogHiba("Az oldalak sorrendje rossz!");
             }
             if (!EllMegszerkesztheto)
             {
                 throw new HaromszogHiba("Ez nem szerkeszthető meg!");
             }
-            if (!EllNovekvoSorrend)
+            
+            if (!EllDerekszogu)
             {
-                throw new HaromszogHiba("Az oldalak sorrendje rossz!");
+                throw new HaromszogHiba("Ez nem derékszögű!");
             }
-
         }
     }
 }
