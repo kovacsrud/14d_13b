@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfMine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMine"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="mineField">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <fa:ImageAwesome Icon="Flag" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <fa:ImageAwesome Icon="Bomb" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" />
+        <fa:FontAwesome Text="1" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold" Grid.Column="2"/>
+
+    </Grid>
+</Window>
