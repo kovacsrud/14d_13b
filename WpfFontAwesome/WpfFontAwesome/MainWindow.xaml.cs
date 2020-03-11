@@ -54,14 +54,56 @@ namespace WpfFontAwesome
             {
                 for (int j = 0; j < oszlop; j++)
                 {
-                    //switch (rand.Next(1,9))
-                    switch (1)
+                    switch (rand.Next(1,9))
+                    //switch (1)
                     {
                         case 1:
                             MineItem num1 = new MineItem();
                             mineGrid.Children.Add(num1.num1);
                             Grid.SetRow(num1.num1, i);
                             Grid.SetColumn(num1.num1, j);
+                            break;
+                        case 2:
+                            MineItem num2 = new MineItem();
+                            mineGrid.Children.Add(num2.num2);
+                            Grid.SetRow(num2.num2, i);
+                            Grid.SetColumn(num2.num2, j);
+                            break;
+                        case 3:
+                            MineItem num3 = new MineItem();
+                            mineGrid.Children.Add(num3.num3);
+                            Grid.SetRow(num3.num3, i);
+                            Grid.SetColumn(num3.num3, j);
+                            break;
+                        case 4:
+                            MineItem num4 = new MineItem();
+                            mineGrid.Children.Add(num4.num4);
+                            Grid.SetRow(num4.num4, i);
+                            Grid.SetColumn(num4.num4, j);
+                            break;
+                        case 5:
+                            MineItem num5 = new MineItem();
+                            mineGrid.Children.Add(num5.num5);
+                            Grid.SetRow(num5.num5, i);
+                            Grid.SetColumn(num5.num5, j);
+                            break;
+                        case 6:
+                            MineItem num6 = new MineItem();
+                            mineGrid.Children.Add(num6.num6);
+                            Grid.SetRow(num6.num6, i);
+                            Grid.SetColumn(num6.num6, j);
+                            break;
+                        case 7:
+                            MineItem flag = new MineItem();
+                            mineGrid.Children.Add(flag.flag);
+                            Grid.SetRow(flag.flag, i);
+                            Grid.SetColumn(flag.flag, j);
+                            break;
+                        case 8:
+                            MineItem bomb = new MineItem();
+                            mineGrid.Children.Add(bomb.bomb);
+                            Grid.SetRow(bomb.bomb, i);
+                            Grid.SetColumn(bomb.bomb, j);
                             break;
                         default:
                             break;
