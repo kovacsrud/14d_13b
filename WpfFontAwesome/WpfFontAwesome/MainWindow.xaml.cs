@@ -31,7 +31,7 @@ namespace WpfFontAwesome
             //aws.Children.Add(items.num4);
             //Grid.SetRow(items.num4, 1);
             rand = new Random();
-            RandomGrid(20, 20);
+            //RandomGrid(20, 20);
         }
 
         public void RandomGrid(int sor,int oszlop)
@@ -55,7 +55,7 @@ namespace WpfFontAwesome
                 for (int j = 0; j < oszlop; j++)
                 {
                     switch (rand.Next(1,9))
-                    //switch (1)
+                    
                     {
                         case 1:
                             MineItem num1 = new MineItem();
@@ -111,6 +111,28 @@ namespace WpfFontAwesome
                 }
 
             }
+            alapGrid.Children.Add(mineGrid);
+        }
+
+        public void Aknarako(int sor,int oszlop)
+        {
+            var aknaSzam = (sor * oszlop) / 10;
+            Grid mineGrid = new Grid();
+            for (int i = 0; i < sor; i++)
+            {
+                RowDefinition rowdef = new RowDefinition();
+                mineGrid.RowDefinitions.Add(rowdef);
+            }
+            for (int i = 0; i < oszlop; i++)
+            {
+                ColumnDefinition coldef = new ColumnDefinition();
+                mineGrid.ColumnDefinitions.Add(coldef);
+            }
+
+            //???
+
+
+
             alapGrid.Children.Add(mineGrid);
         }
             
