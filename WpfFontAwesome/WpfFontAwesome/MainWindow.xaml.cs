@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace WpfFontAwesome
             //Grid.SetRow(items.num4, 1);
             rand = new Random();
             //RandomGrid(20, 20);
+            Aknarako(10, 10);
         }
 
         public void RandomGrid(int sor,int oszlop)
@@ -130,11 +132,40 @@ namespace WpfFontAwesome
             }
 
             //???
+            
+            while (aknaSzam>0)
+            {
+                var sorPoz = rand.Next(0, sor + 1);
+                var oszlopPoz = rand.Next(0, oszlop + 1);
+                                
+                MineItem bomb = new MineItem();
+                mineGrid.Children.Add(bomb.bomb);
+                Grid.SetRow(bomb.bomb,sorPoz);
+                Grid.SetColumn(bomb.bomb, oszlopPoz);
+        
+                aknaSzam--;
 
-
-
+            }
+            
             alapGrid.Children.Add(mineGrid);
         }
+        
+        public void Bejaras(Grid grid)
+        {
+
+            foreach (Grid mineGrid in grid.Children)
+            {
+                foreach (UIElement item in mineGrid.Children)
+                {
+
+                    var s = Grid.GetRow(item);
+                    var o = Grid.GetColumn(item);
+                    Debug.WriteLine($"Elem:{s},{o}");
+                }
+            }
+
             
+
+        }
     }
 }
