@@ -149,6 +149,14 @@ public void ChangeUpIcon(int elem)
 ```
 ## Vegyük használatba a GameItem osztályt!
 
+Az ablak XAML fájljában készítsünk egy Grid-et, a neve legyen alapGrid.
+```xml
+ <Grid x:Name="alapGrid">
+        
+ </Grid>
+```
+
+
 Egyenlőre az ablak mögöttes kódjába dolgozunk, később minden játékkal kapcsolatos tevéknységet külön osztályba helyezünk.
 
 **A kiinduló állapot:**
@@ -234,3 +242,7 @@ public partial class MainWindow : Window
         }
     }
 ```
+**A következő lépés a Grid létrehozása. Ezt kódból kell csinálni, külön metódust készítünk erre a célra, nevezzük el CreateGrid-nek**.
+
+
+
