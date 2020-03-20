@@ -280,3 +280,4 @@ public void CreateGrid(int sor, int oszlop)
     alapGrid.Children.Add(mineGrid);
 }
 ```
+Ezek után a kódnak futnia kell, és meg kell jelennie a 20x20-as gridnek. Mára ennyi.
