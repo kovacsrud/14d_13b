@@ -73,3 +73,20 @@ public void SetDownLayer(int elem)
            
 }
 ```
+ - A felső réteg lekérdezése
+```C#
+public Label GetUpLayer()
+{
+    return UpLayer;
+}
+```
+- Az alsó réteg lekérdezése
+
+```C#
+public Label GetDownLayer()
+{
+    return DownLayer;
+}
+```
+
+
