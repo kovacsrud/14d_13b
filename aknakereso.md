@@ -147,4 +147,38 @@ public void ChangeUpIcon(int elem)
             
 }
 ```
+## Vegyük használatba a GameItem osztályt!
 
+Egyenlőre az ablak mögöttes kódjába dolgozunk, később minden játékkal kapcsolatos tevéknységet külön osztályba helyezünk.
+
+**A kiinduló állapot:**
+
+```C#
+ public partial class MainWindow : Window
+    {
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+    }
+```
+
+**Hozzuk létre a szükséges mezőket**
+
+```C#
+public partial class MainWindow : Window
+    {
+        GameItem[,] gameItems;
+        int sor;
+        int oszlop;
+        BombPos bombaHelyek;
+        bool IsBomb;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+    }
+```
