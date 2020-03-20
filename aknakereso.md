@@ -173,7 +173,7 @@ public partial class MainWindow : Window
         GameItem[,] gameItems;
         int sor;
         int oszlop;
-        BombPos bombaHelyek;
+        //BombPos bombaHelyek;
         bool IsBomb;
 
         public MainWindow()
@@ -203,3 +203,4 @@ IsBomb = false;
 //ide jön a többi művelet
 ```
 
+Látszik, hogy BombPos osztály egyenlőre nincsen (ez volt a múltkori feladat), az egyenlőre ki van kommentelve.
