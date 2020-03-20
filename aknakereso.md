@@ -204,3 +204,33 @@ IsBomb = false;
 ```
 
 Látszik, hogy BombPos osztály egyenlőre nincsen (ez volt a múltkori feladat), az egyenlőre ki van kommentelve.
+
+**Jelenleg akkor így állunk:**
+
+```C#
+public partial class MainWindow : Window
+    {
+        int sor;
+        int oszlop;
+        GameItem[,] gameItems;
+        //BombPos bombaHelyek;
+        bool IsBomb;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            sor = 20;
+            oszlop = 20;
+            gameItems = new GameItem[sor, oszlop];
+
+            for (int i = 0; i < gameItems.GetLength(0); i++)
+            {
+                for (int j = 0; j < gameItems.GetLength(1); j++)
+                {
+                    gameItems[i, j] = new GameItem(11, 10);
+                }
+            }
+            IsBomb = false;
+        }
+    }
+```
