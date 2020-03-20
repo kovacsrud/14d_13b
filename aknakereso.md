@@ -88,5 +88,53 @@ public Label GetDownLayer()
     return DownLayer;
 }
 ```
+ - A legfontosabb a konstruktor, beállítjuk a grafikus elemeket, a rétegeket, állapotváltozókat.
+ 
+```C#
+public GameItem(int up,int down)
+{
+    UpLayer = new Label();
+    DownLayer = new Label();
+
+    elemek =  new FontAwesome.WPF.FontAwesome[12];
+    for (int i = 0; i < elemek.Length; i++)
+    {
+        elemek[i]= new FontAwesome.WPF.FontAwesome();
+    }
+
+    elemek[0].Icon = FontAwesomeIcon.Bomb;
+    elemek[0].FontSize = 20;
+    elemek[1].Text = "1";
+    elemek[1].FontSize = 20;
+    elemek[2].Text = "2";
+    elemek[2].FontSize = 20;
+    elemek[3].Text = "3";
+    elemek[3].FontSize = 20;
+    elemek[4].Text = "4";
+    elemek[4].FontSize = 20;
+    elemek[5].Text = "5";
+    elemek[5].FontSize = 20;
+    elemek[6].Text = "6";
+    elemek[6].FontSize = 20;
+    elemek[7].Text = "7";
+    elemek[7].FontSize = 20;
+    elemek[8].Text = "7";
+    elemek[8].FontSize = 20;
+    elemek[9].Icon = FontAwesomeIcon.Flag;
+    elemek[9].FontSize = 20;
+    elemek[10].Icon = FontAwesomeIcon.Square;
+    elemek[10].FontSize = 20;
+    elemek[10].Foreground = Brushes.Beige;
+    elemek[11].Icon = FontAwesomeIcon.SquareOutline;
+    elemek[11].FontSize = 20;
+
+    SetUpLayer(up);
+    SetDownLayer(down);
+    Covered = true;
+    Flagged = false;
+
+
+}
+```
 
 
