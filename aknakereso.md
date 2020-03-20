@@ -38,7 +38,7 @@ Az osztály mezőinek hozzáadása következik, amelyek a következők:
  ```
 Az osztály metódusai:
 
- - SetUpLayer a felső réteg beállítása. Jelen esetben nem a réteg **Text** tulajdonságába írunk, ugyanis a FontAwesome elemek ott nem használhatóak, hanem egy StackPanelt csinálunk, abba írunk, és ezt a StackPanelt adjuk hozzá a Label-hez. A szín megadás bedrótozása nem szép megoldás, később majd refaktorálni kell, de első verziónak elmegy.
+ - SetUpLayer a felső réteg beállítása. Jelen esetben nem a réteg **Text** tulajdonságába írunk, ugyanis a FontAwesome elemek ott nem használhatóak, hanem egy StackPanelt csinálunk, abba írunk, és ezt a StackPanelt adjuk hozzá a Label-hez. A szín megadás bedrótozása nem szép megoldás, később majd refaktorálni kell, de első verziónak elmegy. A bemenő paraméterben az elemek tömb elemének sorszámát adjuk meg, azaz hogy melyik elemet akarjuk használni.
  
  ```C#
   public void SetUpLayer(int elem)
