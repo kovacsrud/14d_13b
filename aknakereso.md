@@ -136,5 +136,15 @@ public GameItem(int up,int down)
 
 }
 ```
+- A felső réteg elemének módosítása, akkor kell, amikor zászlóval megjelöljük az elemet
 
+```C#
+public void ChangeUpIcon(int elem)
+{
+    StackPanel pn = (StackPanel)UpLayer.Content;
+    FontAwesome.WPF.FontAwesome actIcon = (FontAwesome.WPF.FontAwesome)pn.Children[0];
+    actIcon.Icon = elemek[elem].Icon;     
+            
+}
+```
 
