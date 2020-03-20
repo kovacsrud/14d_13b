@@ -184,3 +184,22 @@ public partial class MainWindow : Window
 ```
 Az **IsBomb** logikai változó jelzi, ha aknára léptünk, ebben az esetben felfedjük a teljes játékteret, és játék vége.
 
+A **MainWindow()** metódusban elvégezzük a létrehozó műveleteket (lesz egy pár)
+
+```C#
+sor = 20;
+oszlop = 20;
+gameItems = new GameItem[sor, oszlop];
+
+for (int i = 0; i < gameItems.GetLength(0); i++)
+{
+    for (int j = 0; j < gameItems.GetLength(1); j++)
+       {
+           gameItems[i, j] = new GameItem(11,10);
+       }
+}
+IsBomb = false;
+
+//ide jön a többi művelet
+```
+
