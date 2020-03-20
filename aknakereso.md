@@ -36,5 +36,23 @@ Az osztály mezőinek hozzáadása következik, amelyek a következők:
  ```C#
  public bool Flagged;
  ```
+Az osztály metódusai:
+
+ - SetUpLayer a felső réteg beállítása. Jelen esetben nem a réteg **Text** tulajdonságába írunk, ugyanis a FontAwesome elemek ott nem használhatóak, hanem egy StackPanelt csinálunk, abba írunk, és ezt a StackPanelt adjuk hozzá a Label-hez. A szín megadás bedrótozása nem szép megoldás, később majd refaktorálni kell, de első verziónak elmegy.
  
+ ```C#
+  public void SetUpLayer(int elem)
+  {
+    StackPanel pn = new StackPanel();
+            
+    pn.Children.Add(elemek[elem]);
+    UpLayer.MinHeight = 40;
+    UpLayer.Margin = new Thickness(1);
+    UpLayer.VerticalAlignment = VerticalAlignment.Center;
+    UpLayer.HorizontalAlignment = HorizontalAlignment.Center;
+    UpLayer.Background = Brushes.AliceBlue;
+    UpLayer.Content = pn;
+           
+}
+ ```
  
