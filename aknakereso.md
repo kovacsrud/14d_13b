@@ -182,3 +182,5 @@ public partial class MainWindow : Window
         }
     }
 ```
+Az **IsBomb** logikai változó jelzi, ha aknára léptünk, ebben az esetben felfedjük a teljes játékteret, és játék vége.
+
