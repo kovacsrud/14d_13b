@@ -239,10 +239,44 @@ public partial class MainWindow : Window
                 }
             }
             IsBomb = false;
+            CreateGrid(sor, oszlop);
         }
     }
 ```
 **A következő lépés a Grid létrehozása. Ezt kódból kell csinálni, külön metódust készítünk erre a célra, nevezzük el CreateGrid-nek**.
 
 
+```C#
+public void CreateGrid(int sor, int oszlop)
+{
+    Grid mineGrid = new Grid();
+            //sor ill. oszlop definíciókat kell hozzáadni
+            //először
+            for (int i = 0; i < sor; i++)
+            {
+                RowDefinition rowdef = new RowDefinition();
+                mineGrid.RowDefinitions.Add(rowdef);
+            }
+            for (int i = 0; i < oszlop; i++)
+            {
+                ColumnDefinition coldef = new ColumnDefinition();
+                mineGrid.ColumnDefinitions.Add(coldef);
+            }
 
+            for (int i = 0; i < sor; i++)
+            {
+                for (int j = 0; j < oszlop; j++)
+                {                                 
+                            
+                            mineGrid.Children.Add(gameItems[i,j].GetUpLayer());
+                            Grid.SetRow(gameItems[i, j].GetUpLayer(), i);
+                            Grid.SetColumn(gameItems[i, j].GetUpLayer(), j);
+                            //itt majd hozzá kell adni egy eseménykezelő függvényt a bal gombos kattintáshoz
+                            //itt majd hozzá kell adni egy eseménykezelő függvényt a jobb gombos kattintáshoz
+                }
+
+            }
+            
+    alapGrid.Children.Add(mineGrid);
+}
+```
