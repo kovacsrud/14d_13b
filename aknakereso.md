@@ -55,4 +55,21 @@ Az osztály metódusai:
            
 }
  ```
- 
+  - SetDownLayer az alsó réteg beállítása.
+  
+```C#
+public void SetDownLayer(int elem)
+{
+            
+    StackPanel pn = new StackPanel();
+            
+    pn.Children.Add(elemek[elem]);
+    DownLayer.MinHeight = 40;
+    DownLayer.Margin = new Thickness(1);
+    DownLayer.VerticalAlignment = VerticalAlignment.Center;
+    DownLayer.HorizontalAlignment = HorizontalAlignment.Center;
+    DownLayer.Background = Brushes.AliceBlue;
+    DownLayer.Content = pn;
+           
+}
+```
