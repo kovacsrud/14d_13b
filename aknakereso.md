@@ -330,4 +330,30 @@ public List<Pos> bombak {
            
 }
 ```
+Véletlenszámra szükség lesz:
+```C#
+ Random rand = new Random();
+```
 
+Jöjjön a konstruktor. Paraméterként jön a játéktér sorainak, oszlopainak száma, valamint hogy hány aknapozíció kell.
+
+```C#
+public BombPos(int sorSzam,int oszlopSzam,int darabszam)
+        {
+            for (int i = 0; i <darabszam ; i++)
+            {
+                var randSor = rand.Next(0, sorSzam + 1);
+                var randOszlop = rand.Next(0, oszlopSzam + 1);
+
+                while (bombapoziciok.Any(x => x.sor == randSor && x.oszlop == randOszlop))
+                {
+                    randSor = rand.Next(0, sorSzam + 1);
+                    randOszlop = rand.Next(0, oszlopSzam + 1);
+                }
+                bombapoziciok.Add(new Pos(randSor, randOszlop));
+            }
+            
+        }
+```
+
+Ezek után, a főprogramból már használható az osztály.
