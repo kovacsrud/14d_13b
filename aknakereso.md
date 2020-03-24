@@ -281,3 +281,25 @@ public void CreateGrid(int sor, int oszlop)
 }
 ```
 Ezek után a kódnak futnia kell, és meg kell jelennie a 20x20-as gridnek. Mára ennyi.
+
+2020.03.24
+
+A mai feladat a múltkori feladat belegyúrása a projektbe. A múlkori feladat az volt, hogy mindenki készítsen egy osztályt, amely létrehozza a bombák pozícióit egy 2 dimenziós térben.
+
+Létrehozunk egy új osztályt, **BombPos** néven
+
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WpfAknakereso
+{
+    public class BombPos
+    {
+
+    }
+}
+```
