@@ -303,3 +303,31 @@ namespace WpfAknakereso
     }
 }
 ```
+Ebbe az osztályba készítünk egy beágyazott osztályt, ez fogja tárolni egy bomba pozícióját
+
+```C#
+public class Pos
+        {
+
+            public int sor { get; set; }
+            public int oszlop { get; set; }
+
+            public Pos(int sor, int oszlop)
+            {
+                this.sor = sor;
+                this.oszlop = oszlop;
+            }
+                        
+        }
+```
+
+Létrehozunk egy listát a pozíciók tárolására. A lista gyakorlatilag Property-ként fog működni. A bombapoziciók privát láthatóságú, ezt csak az osztály tudja változtatni. A bombak publikus, és csak olvasható.
+
+```C#
+private List<Pos> bombapoziciok=new List<Pos>();
+public List<Pos> bombak {
+     get { return bombapoziciok; }
+           
+}
+```
+
