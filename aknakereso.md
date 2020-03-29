@@ -428,3 +428,23 @@ Szükség lesz egy olyan metódusra, amely megmondja egy logikai értékkel, hog
         }
 ```
 
+### Létező pozíció?
+
+Minden elemet tudnunk kell körbejárni, hogy meg tudjuk mondani, hogy a környezetében hány bomba van. Minden pozíciónak 8 szomszédja van, ha nem a szélső sorok valamelyikében van. A sarkoknak pl. csak 3 szomszédjuk van. A bal felső sarok esetében nyilván nem tudjuk megnézni, hogy a tőle balra lévő pozíción mi van. Kell egy metódus, ami megvizsgálja, hogy az adott pont létezik-e.
+
+```C#
+ private bool ValidPoz(int sor, int oszlop)
+        {
+            if ((sor >= 0 && sor <= gameItems.GetLength(0) - 1) && (oszlop >= 0 && oszlop <= gameItems.GetLength(1) - 1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+```
+
+A sor és az oszlop pozíció meg be, és True a válasz, ha ez egy létező pozíció, pl(2,3), False, ha pl.(-1,-1) megy be.
+
