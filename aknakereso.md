@@ -357,3 +357,10 @@ public BombPos(int sorSzam,int oszlopSzam,int darabszam)
 ```
 
 Ezek után, a főprogramból már használható az osztály.
+
+A főprogramban először hozzunk létre egy példányt a BombPos osztályból, ez az osztály fogja a pozíciókat szolgáltatni a bombák elhelyezéséhez. A **MainWindow()** metódusban kell létrehozni a példányt.
+
+```C#
+BombPos bombaHelyek;
+```
+
