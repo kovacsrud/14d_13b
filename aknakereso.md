@@ -364,3 +364,34 @@ A főprogramban először hozzunk létre egy példányt a BombPos osztályból, 
 BombPos bombaHelyek;
 ```
 
+## Aknarakó metódus írása
+
+Már van egy gridünk, melyekben Label-ek vannak. A feladat most az, hogy a BombPos osztály példánya által megadott pozíciók esetében a Label-en megadott karatert bombára alakítsuk. Ezt végzi el az Aknarako metódus. Ez bemenő paraméterként megkapja a sorok és az oszlopok számát, valamint azt a gridet, amelyen a gyerek gridjén végig kell menni. Végigmegyünk a gameItems tömbön, és ha a pozíciója benne van a bombák pozíciói között, akkor az alsó réteget 0-ra állítjuk (ez a bomba pozíciója a gameitemek között).
+
+```C#
+ public void Aknarako(int sor, int oszlop,Grid alapGrid)
+        {
+            var aknaSzam = (sor * oszlop) / 10;
+
+            bombaHelyek = new BombPos(20, 20, aknaSzam);
+
+
+            foreach (Grid mineGrid in alapGrid.Children)
+            {
+                foreach (Label item in mineGrid.Children)
+                {
+
+                    var s = Grid.GetRow(item);
+                    var o = Grid.GetColumn(item);
+
+                    if (bombaHelyek.bombak.Any(x=>x.sor==s && x.oszlop==o))
+                    {
+                        gameItems[s, o].SetDownLayer(0);
+                    }
+                }
+
+            }
+                           
+            
+        }
+```
