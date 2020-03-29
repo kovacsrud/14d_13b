@@ -396,3 +396,7 @@ Már van egy gridünk, melyekben Label-ek vannak. A feladat most az, hogy a Bomb
         }
 ```
 Ezt a metódust is meg kell hívni a **MainWindow()**-ban.
+
+```C#
+ Aknarako(sor, oszlop, alapGrid);
+```
