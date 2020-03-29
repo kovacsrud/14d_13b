@@ -528,4 +528,40 @@ Az adott pont minden lehetséges szomszédját vizsgálni kell.
 
         }
 ```
+### A megfelelő számok meghatározása, grid-be írása
 
+A játék inicializálásának utolsó lépéseként meg kell határozni, hogy egy adott pont környezetében mennyi bomba van, és a gameItems[] megfelelő elemeit ennek megfelelően módosítani.
+
+```C#
+ public void Szamozas(Grid alapGrid)
+        {
+            foreach (Grid mineGrid in alapGrid.Children)
+            {
+                foreach (Label item in mineGrid.Children)
+                {
+
+                    var s = Grid.GetRow(item);
+                    var o = Grid.GetColumn(item);
+
+                    //csak nyomkövetési célból szerepel, végleges verzióban nem kell benne lennie
+                    if (IsMine(gameItems[s,o].GetDownLayer()))
+                    {
+
+                        Debug.WriteLine("Bomba!");
+                      //ez a lényeg  
+                    } else if(BombNumber(s, o)>0)
+                    {
+                        gameItems[s, o].SetDownLayer(BombNumber(s, o));
+                        Debug.WriteLine($"Bombnum:{BombNumber(s, o)}");
+                    }
+
+                    
+
+                }
+
+            }
+        }
+```
+
+```C#
+```
