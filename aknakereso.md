@@ -448,3 +448,84 @@ Minden elemet tudnunk kell körbejárni, hogy meg tudjuk mondani, hogy a környe
 
 A sor és az oszlop pozíció meg be, és True a válasz, ha ez egy létező pozíció, pl(2,3), False, ha pl.(-1,-1) megy be.
 
+### A szomszédok között hány bomba van? 
+
+Meg kell határozni, hogy az adott pont környezetében hány bomba van, hiszen ez majd a játékosnak fontos információ lesz.
+Az adott pont minden lehetséges szomszédját vizsgálni kell.
+
+```C#
+ public int BombNumber(int sor, int oszlop)
+        {
+            int bombnum = 0;
+            
+
+            if (ValidPoz(sor - 1, oszlop - 1))
+            {
+                if (IsMine(gameItems[sor - 1, oszlop - 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor - 1, oszlop))
+            {
+                if (IsMine(gameItems[sor - 1, oszlop].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor - 1, oszlop + 1))
+            {
+                if (IsMine(gameItems[sor - 1, oszlop + 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor, oszlop + 1))
+            {
+                if (IsMine(gameItems[sor, oszlop + 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor + 1, oszlop + 1))
+            {
+                if (IsMine(gameItems[sor + 1, oszlop + 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor + 1, oszlop))
+            {
+                if (IsMine(gameItems[sor + 1, oszlop].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor + 1, oszlop - 1))
+            {
+                if (IsMine(gameItems[sor + 1, oszlop - 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+            if (ValidPoz(sor, oszlop - 1))
+            {
+                if (IsMine(gameItems[sor, oszlop - 1].GetDownLayer()))
+                {
+                    bombnum += 1;
+                }
+
+            }
+
+            return bombnum;
+
+        }
+```
+
