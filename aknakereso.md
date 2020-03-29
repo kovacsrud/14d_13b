@@ -400,3 +400,31 @@ Ezt a metódust is meg kell hívni a **MainWindow()**-ban.
 ```C#
  Aknarako(sor, oszlop, alapGrid);
 ```
+
+## Segéd metódusok
+
+### Bomba vagy nem?
+
+Szükség lesz egy olyan metódusra, amely megmondja egy logikai értékkel, hogy az adott pozíción bomba van-e. Ez mindenféleképpen kell, hogy a bombák környékén meg tudjuk állapítani a megjelenítendő számokat.
+
+```C#
+ private bool IsMine(Label aktItem)
+        {
+            StackPanel aktPanel = (StackPanel)aktItem.Content;
+
+            FontAwesome.WPF.FontAwesome element = (FontAwesome.WPF.FontAwesome)aktPanel.Children[0];
+
+
+            if (element.Icon== FontAwesome.WPF.FontAwesomeIcon.Bomb)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+```
+
