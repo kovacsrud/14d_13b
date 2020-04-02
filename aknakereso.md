@@ -563,5 +563,41 @@ A játék inicializálásának utolsó lépéseként meg kell határozni, hogy e
         }
 ```
 
+### A jobb gombbal való kattintás implementálása
+
+Ennél a metódusnál megjelenítjük a zászlót. Ha megint kattintanak, akkor eltüntetjük. Ha megint akkor megint zászló..
+
 ```C#
+ public void FlagClick(object sender, RoutedEventArgs e)
+        {
+
+            UIElement actGameItem = (UIElement)sender;
+            var sora = Grid.GetRow(actGameItem);
+            var oszlopa = Grid.GetColumn(actGameItem);
+                        
+            Label actGameLabel = (Label)sender;
+
+
+            if (gameItems[sora, oszlopa].Covered)
+            {
+                if (gameItems[sora, oszlopa].Flagged)
+                {
+                    gameItems[sora, oszlopa].ChangeUpIcon(10);
+                    gameItems[sora, oszlopa].Flagged = !gameItems[sora, oszlopa].Flagged;
+                    actGameLabel.Content = gameItems[sora, oszlopa].GetUpLayer().Content;
+                    
+
+                }
+                else
+                {
+                    gameItems[sora, oszlopa].ChangeUpIcon(9);
+                    gameItems[sora, oszlopa].Flagged = !gameItems[sora, oszlopa].Flagged;
+                    actGameLabel.Content = gameItems[sora, oszlopa].GetUpLayer().Content;
+                    
+                }
+            }
+
+
+
+        }
 ```
