@@ -757,3 +757,9 @@ Ez már egyszerű, az előző metódusokra támaszkodva.
 
         }
 ```
+A CreateGrid metódusban megint hozzá kell adni az eseménykezelőt az egyes elemekhez!
+
+```C#
+//itt majd hozzá kell adni egy eseménykezelő függvényt a bal gombos kattintáshoz
+gameItems[i, j].GetUpLayer().MouseLeftButtonDown += ItemClick;
+```
