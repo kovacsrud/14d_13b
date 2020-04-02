@@ -608,3 +608,8 @@ Fontos feladat jön, a CreateGrid metódusnál gondoskodni kell arról, hogy az 
 gameItems[i, j].GetUpLayer().MouseRightButtonDown += FlagClick;                  
 
 ```
+***A bal gombos kattintás implementálása előtt végig kell gondolni, hogy minek is kell történnie, ha a játékos a bal gombbal kattint.***
+
+ - Ha bombára kattint, akkor vége a játéknak, felfedjük a teljes játékteret.
+ - Ha olyan helyen kattint, ahol szám van, akkor csak azt az egyetlen elemet fedjük fel.
+ - Ha olyan helyre kattint, ahol semmi sincs, akkor felfedjük ezt a helyet, és a környezetében lévő üres helyeket is, egészen addig, h               hogy a szélén a bombaszámok jelenjenek meg.
