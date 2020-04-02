@@ -662,3 +662,27 @@ gameItems[i, j].GetUpLayer().MouseRightButtonDown += FlagClick;
             }
         }
  ```
+### Az adott elem nulla (nem szám és nem bomba)?
+
+Ennek a vizsgálatára írunk egy metódust, hogy könnyebb legyen vizsgálni. Nagyon hasonlít az IsMine-hoz, ezért hosszabb távon egészen biztosan érdemes lenne általánosítani (Refactoring)
+
+```C#
+private bool IsNull(Label aktItem)
+        {
+            StackPanel aktPanel = (StackPanel)aktItem.Content;
+
+            FontAwesome.WPF.FontAwesome element = (FontAwesome.WPF.FontAwesome)aktPanel.Children[0];
+
+
+            if (element.Icon == FontAwesome.WPF.FontAwesomeIcon.Square)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+```
