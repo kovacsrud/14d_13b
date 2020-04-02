@@ -601,3 +601,10 @@ Ennél a metódusnál megjelenítjük a zászlót. Ha megint kattintanak, akkor 
 
         }
 ```
+Fontos feladat jön, a CreateGrid metódusnál gondoskodni kell arról, hogy az elemekhez hozzáadjuk az eseményt. A komment segít a beazonosításban.
+
+```C#
+//itt majd hozzá kell adni egy eseménykezelő függvényt a jobb gombos kattintáshoz
+gameItems[i, j].GetUpLayer().MouseRightButtonDown += FlagClick;                  
+
+```
