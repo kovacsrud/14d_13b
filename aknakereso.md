@@ -562,6 +562,11 @@ A játék inicializálásának utolsó lépéseként meg kell határozni, hogy e
             }
         }
 ```
+Ezt is meg kell hívni a **MainWindow()** -ból
+
+```C#
+Szamozas(alapGrid);
+```
 
 ### A jobb gombbal való kattintás implementálása
 
