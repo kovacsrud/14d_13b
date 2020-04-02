@@ -768,3 +768,5 @@ A CreateGrid metódusban megint hozzá kell adni az eseménykezelőt az egyes el
 //itt majd hozzá kell adni egy eseménykezelő függvényt a bal gombos kattintáshoz
 gameItems[i, j].GetUpLayer().MouseLeftButtonDown += ItemClick;
 ```
+
+Ezen a ponton már van egy működő, játszható (tesztelhető!) aknakeresőnk (remélhetőleg :) ), de még vannak apróságok (bomba számlálás, esetleg idő mérése, új játék indítás).
