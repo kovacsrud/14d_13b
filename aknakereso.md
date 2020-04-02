@@ -635,5 +635,30 @@ gameItems[i, j].GetUpLayer().MouseRightButtonDown += FlagClick;
             }
         }
  ```
+ ### Játéktér frissítése
  
+ A bal gombos kattintások után szükség lesz a játéktér frissítésére.
  
+ ```C#
+ public void GridFresh(Grid alapGrid)
+        {
+            foreach (Grid mineGrid in alapGrid.Children)
+            {
+                foreach (Label item in mineGrid.Children)
+                {
+
+                    var s = Grid.GetRow(item);
+                    var o = Grid.GetColumn(item);
+
+                    if (!gameItems[s,o].Covered)
+                    {
+                        item.Content = gameItems[s, o].GetDownLayer().Content;
+                    }
+
+                    
+
+                }
+
+            }
+        }
+ ```
