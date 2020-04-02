@@ -686,3 +686,44 @@ private bool IsNull(Label aktItem)
 
         }
 ```
+### Üres terület(ek)felfedése
+
+Talán a legnehezebb feladat. Ha az adott pont üres, akkor felfedjük a környezetének az összes pontját. Ha ezek közül valamelyik szintén üres, akkor annak a környezetét stb. Ez rekurzív metódushívással történik, amellyel óvatosan kell bánni.
+
+```C#
+public void UnCover(int sor, int oszlop, int cnt = 0)
+        {
+                    
+
+                cnt++;
+
+
+                gameItems[sor, oszlop].Covered = false;
+
+
+                Label item = gameItems[sor, oszlop].GetDownLayer();
+
+                          
+
+
+                for (int i = Math.Max(sor - 1, 0); i <= Math.Min(sor + 1, gameItems.GetLength(0) - 1); i++)
+                {
+
+                    for (int j = Math.Max(oszlop - 1, 0); j <= Math.Min(oszlop + 1, gameItems.GetLength(1) - 1); j++)
+                    {
+                
+
+
+                        if (IsNull(item) && cnt <= 50 && gameItems[i, j].Covered)
+                        {
+                            gameItems[i, j].Covered = false;
+                            UnCover(i, j, cnt);
+                        }
+
+
+
+                    }
+                }
+
+        }
+```
