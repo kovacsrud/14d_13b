@@ -727,3 +727,31 @@ public void UnCover(int sor, int oszlop, int cnt = 0)
 
         }
 ```
+### bal gombbal való kattintás implementálása
+
+Ez már egyszerű, az előző metódusokra támaszkodva.
+
+ public void ItemClick(object sender, RoutedEventArgs e)
+        {
+
+            UIElement actGameItem = (UIElement)sender;
+            var sora = Grid.GetRow(actGameItem);
+            var oszlopa = Grid.GetColumn(actGameItem);
+
+            Label actGameLabel = (Label)sender;
+
+            actGameLabel.Content = gameItems[sora, oszlopa].GetDownLayer().Content;
+            gameItems[sora, oszlopa].Covered = false;
+                       
+
+            if (IsMine(actGameLabel))
+            {
+                UnCover(alapGrid);
+            }
+            if (IsNull(actGameLabel))
+            {
+                UnCover(sora, oszlopa);
+                GridFresh(alapGrid);
+            }
+
+        }
