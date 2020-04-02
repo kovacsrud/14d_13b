@@ -613,3 +613,27 @@ gameItems[i, j].GetUpLayer().MouseRightButtonDown += FlagClick;
  - Ha bombára kattint, akkor vége a játéknak, felfedjük a teljes játékteret.
  - Ha olyan helyen kattint, ahol szám van, akkor csak azt az egyetlen elemet fedjük fel.
  - Ha olyan helyre kattint, ahol semmi sincs, akkor felfedjük ezt a helyet, és a környezetében lévő üres helyeket is, egészen addig, h               hogy a szélén a bombaszámok jelenjenek meg.
+ 
+ ### A játéktér felfedése
+ 
+ ```C#
+ public void UnCover(Grid alapGrid)
+        {
+            foreach (Grid mineGrid in alapGrid.Children)
+            {
+                foreach (Label item in mineGrid.Children)
+                {
+
+                    var s = Grid.GetRow(item);
+                    var o = Grid.GetColumn(item);
+
+                    
+                    item.Content=gameItems[s, o].GetDownLayer().Content;
+                    
+                }
+
+            }
+        }
+ ```
+ 
+ 
