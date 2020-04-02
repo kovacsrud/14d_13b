@@ -731,6 +731,7 @@ public void UnCover(int sor, int oszlop, int cnt = 0)
 
 Ez már egyszerű, az előző metódusokra támaszkodva.
 
+```C#
  public void ItemClick(object sender, RoutedEventArgs e)
         {
 
@@ -755,3 +756,4 @@ Ez már egyszerű, az előző metódusokra támaszkodva.
             }
 
         }
+```
