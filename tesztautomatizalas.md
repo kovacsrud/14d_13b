@@ -13,3 +13,9 @@ Készítsünk egy új, konzolos projektet!
 
 Nuget csomagok telepítésére lesz szükség. A **Solution**-ön jobb klikk, majd **Manage Nuget Packages for Solution**.
 
+A **Browse** ra váltani, majd beírni ***selenium***.
+
+Kiválasztani és telepíteni a következőket:
+  - **Selenium.WebDriver**
+  - **Selenium.FireFox.WebDriver** 
+
