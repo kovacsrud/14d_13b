@@ -9,3 +9,7 @@ Ezekre a feladatokra külön keretrendszerek léteznek, ezek közül a legismert
 A célunk annak a megvalósítása, hogy legyen egy kis program, (még nem is lesz ez teszt), amely bemutatja, hogy hogyan is működik az automatizálás. A selenium képes arra, hogy a segítségével a mezőkbe való beírást, linkekre való kattintást, letöltést stb. automatizálni tudjuk.
 
 
+Készítsünk egy új, konzolos projektet!
+
+Nuget csomagok telepítésére lesz szükség. A **Solution**-ön jobb klikk, majd **Manage Nuget Packages for Solution**.
+
