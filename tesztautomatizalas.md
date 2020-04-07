@@ -50,3 +50,26 @@ driver.FindElement(By.Id("password")).SendKeys("a1234567" + Keys.Enter);
 ```
 Itt most a weboldalban a mezőhöz rendelt Id-t használjuk, hogy a program odataláljon a megfelelő beviteli mezőkhöz. A **SendKeys** küldi a beírni kívánt adatokat. A Keys.Enter-el pedig az Enter leütését küldjük.
 
+Kattintások, hogy a kurzusba eljussunk:
+```C#
+driver.FindElement(By.LinkText("Programozás")).Click();
+driver.FindElement(By.LinkText("Szoftverfejlesztő (14d13b)")).Click();
+```
+
+Itt már a megfelelő elemeket kell csak beazonosítani. Ezt egy XPath kifejezés teszi meg. Az egyes elemekhez tartozó XPath kifejezések meghatározására külön kiegészítők vannak, én is ezt használtam.
+
+```C#
+ IList<IWebElement> feltoltesek = driver.FindElements(By.XPath("/html/body/div[2]/div/div[4]/div/div/div[1]/div/div/div/ul/li[2]/div[3]"));
+
+Console.WriteLine($"Feltöltések:{feltoltesek.Count}");
+
+for (int i = 0; i < feltoltesek.Count; i++)
+  {
+    Console.WriteLine(feltoltesek[i].Text);
+  }
+```
+Végül:
+```C#
+driver.Close();
+```
+A Close() bezárja a böngésző ablakot. Érdemes lehet elé tenni egy kis várakozást.
