@@ -35,6 +35,18 @@ driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 ```
 Az ImplicitWait-re azért van szükség, mert a weboldal letöltése több-kevesebb időbe telik, így ha ezt nem várnánk meg, akkor a későbbi műveletek kivételre futnának, hiszen nem lehet rákattintani egy linkre, ami még nincs is ott.
 
-Először is a programnak meg kell találnia a **Belépés** szövegű linket
+Először is a programnak meg kell találnia a **Belépés** szövegű linket, és rá is kattintani.
 
 ```C#
+driver.FindElement(By.LinkText("Belépés")).Click();
+```
+Sokféleképpen lehet keresni egy elemet az oldalban, LinkText, CSS stílus, Xpath útvonal stb alapján. A FindElements metódussal intézzük ezt.
+
+Ha megkattintotta a program a linket, akkor be kell jelentkezni.
+
+```C#
+driver.FindElement(By.Id("username")).SendKeys("seleniumtest");
+driver.FindElement(By.Id("password")).SendKeys("a1234567" + Keys.Enter);
+```
+Itt most a weboldalban a mezőhöz rendelt Id-t használjuk, hogy a program odataláljon a megfelelő beviteli mezőkhöz. A **SendKeys** küldi a beírni kívánt adatokat. A Keys.Enter-el pedig az Enter leütését küldjük.
+
