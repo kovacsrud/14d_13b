@@ -18,4 +18,23 @@ A **Browse** ra váltani, majd beírni ***selenium***.
 Kiválasztani és telepíteni a következőket:
   - **Selenium.WebDriver**
   - **Selenium.FireFox.WebDriver** 
+  
+A következőt valósítjuk meg: belépés a Tanlaktanyára, majd belépés a 14d13b kurzusába, és annak az ott található feltöltések megszámlálása, illetve a feltöltések kiíratása.
 
+Létrehozunk egy ún. drivert, ami a böngésző vezérlését fogja végezni. 
+```C#
+IWebDriver driver = new FirefoxDriver();
+```
+A piros aláhúzásoknál CTRL+.-al töltsük be a szükséges névtereket.
+
+Elvégezzük a szükséges beállításokat:
+```C#
+driver.Url = "https://tanlaktanya.taszi.hu";
+driver.Manage().Window.Maximize();
+driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+```
+Az ImplicitWait-re azért van szükség, mert a weboldal letöltése több-kevesebb időbe telik, így ha ezt nem várnánk meg, akkor a későbbi műveletek kivételre futnának, hiszen nem lehet rákattintani egy linkre, ami még nincs is ott.
+
+Először is a programnak meg kell találnia a **Belépés** szövegű linket
+
+```C#
