@@ -96,8 +96,12 @@ Az előbb egy meglehetősen egyszerű programot készítettünk a valóságban e
 
 ## Appium
 Az Appium  nyílt forrású tesztelési környezet, IOS, Windows, Android alkalmazások teszteléséhez.
+
 [Az Appium weboldala](https://appium.io/)
 
 Az automatizáláshoz szükség lesz egy Windows Application Driver nevű alkalmazás telepítésére.
+
 [Windows Application Driver letöltése](https://github.com/microsoft/WinAppDriver/releases/download/v1.1/WindowsApplicationDriver.msi)
+
+A Windows Application Driver működéséhez Win10 alatt engedélyezni kell a **Fejlesztői mód**-ot, különben nem működik! Ez a **Fejlesztői beállítások** rendszerbeállítások alatt található.
 
