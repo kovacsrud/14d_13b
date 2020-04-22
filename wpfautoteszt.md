@@ -181,6 +181,17 @@ namespace HomersekletAtvaltoTeszt
          
         }
         
+        [Test]
+        public void FahrenheitToCelsiusTest()
+        {
+
+        }
+        
+        [OneTimeTearDown]
+        public void EndTest()
+        {
+                       
+        }
         
         
         
