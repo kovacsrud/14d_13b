@@ -120,4 +120,26 @@ Kezdődhet a teszt írása.
 
 ## A teszt megírása
 
+A teszt forráskódjának a nevét változtassuk meg , legyen mondjuk **AtvaltoAutoTest.cs**. 
+
+A kiinduló állapot:
+
+```C#
+using System;
+using NUnit.Framework;
+
+
+namespace HomersekletAtvaltoTeszt
+{
+    [TestFixture]
+    public class AtvaltoAutoTest
+    {
+        [Test]
+        public void TestMethod1()
+        {
+        
+        }
+    }
+}    
+```
 
