@@ -90,3 +90,6 @@ private void buttonKonvertalas_Click(object sender, RoutedEventArgs e)
             
         }
 ```
+## A tesztelési környezet kiépítése
+
+Az előbb egy meglehetősen egyszerű programot készítettünk a valóságban ez egy jóval összetettebb program lenne... Gondoljuk azt, hogy egy bonyolult programot tesztelünk.
