@@ -95,6 +95,9 @@ private void buttonKonvertalas_Click(object sender, RoutedEventArgs e)
 Az előbb egy meglehetősen egyszerű programot készítettünk a valóságban ez egy jóval összetettebb program lenne... Gondoljuk azt, hogy egy bonyolult programot tesztelünk.
 
 ## Appium
-Az első feladat az Appium telepítése. Az Appium  nyílt forrású tesztelési környezet, IOS, Windows, Android alkalmazások teszteléséhez.
+Az Appium  nyílt forrású tesztelési környezet, IOS, Windows, Android alkalmazások teszteléséhez.
 [Az Appium weboldala](https://appium.io/)
+
+Az automatizáláshoz szükség lesz egy Windows Application Driver nevű alkalmazás telepítésére.
+[Windows Application Driver letöltése](https://github.com/microsoft/WinAppDriver/releases/download/v1.1/WindowsApplicationDriver.msi)
 
