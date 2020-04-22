@@ -42,5 +42,6 @@ namespace WpfHomersekletAtvalto
 ```
 
 ### Az alkalmazás felülete így fog kinézni:
-[A felület](honkonvertalo.png)
+
+(honkonvertalo.png)
 
