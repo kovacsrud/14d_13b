@@ -205,10 +205,10 @@ A [OneTimeSetup] annotáció alatti metódus a kezdeti tevékenységek elvégzé
 A **Setup()** metódus a következő lesz, néhány beállítás, és a driver létrehozása zajlik itt:
 
 ```C#
-        [OneTimeSetUp]
-        public static void Setup()
-        {
-            if (driver == null)
+[OneTimeSetUp]
+public static void Setup()
+{
+    if (driver == null)
             {
                 var appiumOptions = new AppiumOptions();
                 appiumOptions.AddAdditionalCapability("app", WpfProgramId);
@@ -216,6 +216,26 @@ A **Setup()** metódus a következő lesz, néhány beállítás, és a driver l
                 driver = new WindowsDriver<WindowsElement>(new Uri(WindowsApplicationDriverUrl), appiumOptions);
 
 
-            }
-        }
+    }
+}
 ```
+
+Következik az egyik tesztelő metódus:
+```C#
+[Test]
+public void CelsiusToFahrenheitTest()
+{
+    var homersekletErtek = driver.FindElementByAccessibilityId("homersekletErtek");
+    homersekletErtek.SendKeys("1");
+    driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
+
+    var konvertaltHomerseklet = driver.FindElementByAccessibilityId("konvertaltHomerseklet");
+    
+    Assert.AreEqual(Convert.ToDouble(konvertaltHomerseklet.Text), 33.8,0.001);
+
+
+}
+```
+Működése: Beazonosítjuk az adatbevitelre szolgáló szövegmezőt, beleírunk a SendKeys paranccsal egy értéket, majd beazonosítjuk a gombot, és rá is kattintunk. 
+Beazonosítjuk az eredményt megjelenítő elemet.
+Végül az Assert-el megnézzük, hogy az elvárt érték jelenik-e meg az eredménynél.
