@@ -114,4 +114,10 @@ Adjunk hozzá a projekthet egy Nunit tesztet, **HomersekletAtvaltoTeszt** néven
 Jobb gomb a solution-ön majd **Manage Nuget Packages for Solution**
 Először az Nunit-ot keressük meg, telepítsük.
 
+Ezt követően keressük meg és telepítsük az **Appium.Webdriver** csomagot (számos csomagot fog telepíteni).
+
+Kezdődhet a teszt írása.
+
+## A teszt megírása
+
 
