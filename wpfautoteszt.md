@@ -41,5 +41,6 @@ namespace WpfHomersekletAtvalto
 }
 ```
 
-
+### Az alkalmazás felülete így fog kinézni:
+[](Kép)
 
