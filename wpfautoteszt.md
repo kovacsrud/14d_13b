@@ -93,3 +93,8 @@ private void buttonKonvertalas_Click(object sender, RoutedEventArgs e)
 ## A tesztelési környezet kiépítése
 
 Az előbb egy meglehetősen egyszerű programot készítettünk a valóságban ez egy jóval összetettebb program lenne... Gondoljuk azt, hogy egy bonyolult programot tesztelünk.
+
+## Appium
+Az első feladat az Appium telepítése. Az Appium  nyílt forrású tesztelési környezet, IOS, Windows, Android alkalmazások teszteléséhez.
+[Az Appium weboldala](https://appium.io/)
+
