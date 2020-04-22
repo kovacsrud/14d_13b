@@ -105,3 +105,13 @@ Az automatizáláshoz szükség lesz egy Windows Application Driver nevű alkalm
 
 A Windows Application Driver működéséhez Win10 alatt engedélyezni kell a **Fejlesztői mód**-ot, különben nem működik! Ez a **Fejlesztői beállítások** rendszerbeállítások alatt található.
 
+A Windows Application Driver-t el kell indítani, ezt követően lehet az (automatizáló) teszteket lefuttatni. 
+
+## Nunit teszt hozzáadása a projekthez
+
+Adjunk hozzá a projekthet egy Nunit tesztet, **HomersekletAtvaltoTeszt** néven. Számos Nuget csomag telepítésére szükség lesz.
+
+Jobb gomb a solution-ön majd **Manage Nuget Packages for Solution**
+Először az Nunit-ot keressük meg, telepítsük.
+
+
