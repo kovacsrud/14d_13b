@@ -261,3 +261,18 @@ public void FahrenheitToCelsiusTest()
 ```
 Ebben a metódusban annyi különbség van, hogy a **homersekletErtek.Clear()** paranccsal töröljük a beviteli mező tartalmát.
 
+Végül a tesztet lezátó metódus:
+
+```C#
+[OneTimeTearDown]
+public void EndTest()
+{
+
+    if (driver != null)
+    {
+        driver.Close();
+        driver.Quit();
+    }
+
+}
+```
