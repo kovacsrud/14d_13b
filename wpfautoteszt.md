@@ -143,3 +143,46 @@ namespace HomersekletAtvaltoTeszt
 }    
 ```
 
+Az AtvaltoAutoTest osztályon belül számos változót létre kell hozni, a megfelelő névtereket hozzáadni (CTRL+.)
+Hozzáadjuk a szükséges, és egyenlőre üres metódusokat.
+
+```C#
+using System;
+using NUnit.Framework;
+using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Appium;
+using System.Threading;
+
+namespace HomersekletAtvaltoTeszt
+{
+
+  [TestFixture]
+    public class AtvaltoAutoTest
+    {
+        protected const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
+        
+        //itt a program futtatható fájljának útvonalát kell beállítani, ami valószínűleg eltér az itt szereplő útvonaltól!!
+        private const string WpfProgramId = @"G:\c#_uj_projektek\WpfHomersekletAtvalto\WpfHomersekletAtvalto\bin\Debug\WpfHomersekletAtvalto.exe";
+        
+        //itt a program bin/debug mappájának útvonalát kell beállítani, ami valószínűleg eltér az itt szereplő útvonaltól!!
+        private const string WpfProgramPath = @"G:\c#_uj_projektek\WpfHomersekletAtvalto\WpfHomersekletAtvalto\bin\Debug\
+        
+        protected static WindowsDriver<WindowsElement> driver;
+        
+        [OneTimeSetUp]
+        public static void Setup()
+        {
+        
+        }
+        
+        [Test]
+        public void CelsiusToFahrenheitTest()
+        {
+         
+        }
+        
+        
+        
+        
+    }
+```
