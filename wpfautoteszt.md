@@ -202,3 +202,20 @@ Több annotáció is szerepel, amit korábban még nem használtunk.
 A [OneTimeSetup] annotáció alatti metódus a kezdeti tevékenységek elvégzésére szolgál, a [OneTimeTearDown] pedig a teszt utáni lezáró tevékenységeket végző metódus elé kerül.
 
 
+A **Setup()** metódus a következő lesz, néhány beállítás, és a driver létrehozása zajlik itt:
+
+```C#
+        [OneTimeSetUp]
+        public static void Setup()
+        {
+            if (driver == null)
+            {
+                var appiumOptions = new AppiumOptions();
+                appiumOptions.AddAdditionalCapability("app", WpfProgramId);
+                appiumOptions.AddAdditionalCapability("deviceName", "WindowsPC");
+                driver = new WindowsDriver<WindowsElement>(new Uri(WindowsApplicationDriverUrl), appiumOptions);
+
+
+            }
+        }
+```
