@@ -11,7 +11,35 @@ Egy új Wpf alkalmazás a kiindulópont a projekt neve legyen **WpfHomersekletAt
 
 A projekt létrehozása után adjunk hozzá egy új osztályt az osztály neve legyen **HomersekletAtvalto**. Erre az osztályra bízzuk a megfelelő hőmérsékletértékek kiszámítását. Két metódusa lesz, az egyik Celsius fokot vált Fahrenheit-re, a másik Fahrenheit fokot Celsiusra. Statikus osztály lesz, így nem lesz szükség külön példányosításra.
 
+Az osztály kódja,metódusai:
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace WpfHomersekletAtvalto
+{
+    public static class HomersekletAtvalto
+    {
+       
+
+        public static double CelsiusToFahrenheit(double celsius)
+        {
+
+            return (celsius * 1.8) + 32;
+        }
+
+        public static double FahrenheitToCelsius(double fahrenheit)
+        {
+
+            return (fahrenheit - 32) / 1.8;
+          
+        }
+    }
+}
+```
 
 
 
