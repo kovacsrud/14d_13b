@@ -45,3 +45,21 @@ namespace WpfHomersekletAtvalto
 
 ![A felület](honkonvertalo.png)
 
+### A felületet leíró XAML kód (egy Gird-et használunk):
+```XML
+<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="homersekletErtek" AutomationProperties.AutomationId="homersekletErtek" MaxHeight="30" MaxWidth="100" FontSize="20" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="celsiusKivalaszt" AutomationProperties.AutomationId="celsiusKivalaszt"  Content="Konvertálás celsius-ra" FontSize="16" VerticalContentAlignment="Center" />
+            <RadioButton x:Name="fahrenheitKivalaszt" AutomationProperties.AutomationId="fahrenheitKivalaszt"  Content="Konvertálás fahrenheit-re" FontSize="16" VerticalContentAlignment="Center" IsChecked="True" />
+        </StackPanel>
+        <TextBlock x:Name="konvertaltHomerseklet" AutomationProperties.AutomationId="konvertaltHomerseklet" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" />
+        <Button x:Name="buttonKonvertalas" AutomationProperties.AutomationId="buttonKonvertalas" Content="Számolás" Grid.Row="3" MaxWidth="100" MaxHeight="30" Click="buttonKonvertalas_Click" />
+    </Grid>
+```
