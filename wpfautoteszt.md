@@ -63,3 +63,30 @@ namespace WpfHomersekletAtvalto
         <Button x:Name="buttonKonvertalas" AutomationProperties.AutomationId="buttonKonvertalas" Content="Számolás" Grid.Row="3" MaxWidth="100" MaxHeight="30" Click="buttonKonvertalas_Click" />
     </Grid>
 ```
+Az egyes elemeknél feltűnhet az **AutomationProperties.AutomationId**. Ezt az azonosítót használjuk a tesztben majd az elem kiválasztására, elérésére.
+
+A **Számolás** feliratú gomb lenyomására végezzük el a kívánt műveleteket a mögöttes kódban (**MainWindow.xaml.cs**) :
+
+```C#
+private void buttonKonvertalas_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (fahrenheitKivalaszt.IsChecked==true)
+                {
+                    konvertaltHomerseklet.Text = Convert.ToString(HomersekletAtvalto.CelsiusToFahrenheit(Convert.ToDouble(homersekletErtek.Text)));
+                } else
+                {
+                    konvertaltHomerseklet.Text = Convert.ToString(HomersekletAtvalto.FahrenheitToCelsius(Convert.ToDouble(homersekletErtek.Text)));
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Hiba!");
+                
+            }
+            
+        }
+```
