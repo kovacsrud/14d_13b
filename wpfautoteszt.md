@@ -239,3 +239,25 @@ public void CelsiusToFahrenheitTest()
 Működése: Beazonosítjuk az adatbevitelre szolgáló szövegmezőt, beleírunk a SendKeys paranccsal egy értéket, majd beazonosítjuk a gombot, és rá is kattintunk. 
 Beazonosítjuk az eredményt megjelenítő elemet.
 Végül az Assert-el megnézzük, hogy az elvárt érték jelenik-e meg az eredménynél.
+
+A másik tesztelő metódus:
+
+```C#
+[Test]
+public void FahrenheitToCelsiusTest()
+{
+    var homersekletErtek = driver.FindElementByAccessibilityId("homersekletErtek");
+    homersekletErtek.Clear(); 
+
+    homersekletErtek.SendKeys("33,8");
+
+    driver.FindElementByAccessibilityId("celsiusKivalaszt").Click();
+    driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
+
+    var konvertaltHomerseklet = driver.FindElementByAccessibilityId("konvertaltHomerseklet");          
+    
+    Assert.AreEqual(Convert.ToDouble(konvertaltHomerseklet.Text), 1,0.001);
+}
+```
+Ebben a metódusban annyi különbség van, hogy a **homersekletErtek.Clear()** paranccsal töröljük a beviteli mező tartalmát.
+
