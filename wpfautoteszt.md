@@ -369,3 +369,6 @@ public static void CloseReport()
             
 }
 ```
+Amennyiben a tesztünk hibára fut akkor a CloseReport() metódus rögzíti a StackTrace értékét, a hibaüzenetet, illetve egy képenyőmentést is készít a program ablakról, ami a riportban a kép ikonjára kattintva megtekinthető. 
+
+Könnyen belátható, hogy sokkal könnyebb így futtatni pl. 2 tesztet 100-100 teszt esettel, és ezek eredményét utólag kiértékelni, mint ezeket kézzel elvégezni.
