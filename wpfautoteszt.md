@@ -281,5 +281,17 @@ public void EndTest()
 A Test Explorer ablakában láthatja a tesztelő a tesztek eredményét, azonban nem biztos, hogy ez elegendő. Lehet hogy a projektmanager is kíváncsi lenne ezekre az információkra. A megoldás, riport készítése a tesztek futásának eredményéről. Ennek a feladatnak a megoldására számos eszköz létezik, ezek közül megnézzük az Extent Report-ot.
 
 Mint annyi minden más, ez is Nuget csomagban megtalálható, tehát fel kell telepíteni a teszt projektünkhöz.
-Manage Nuget Packages for Solution - > ExtentReports
+
+**Manage Nuget Packages for Solution - > ExtentReports** 
+
+Számos más csomagot is telepíteni fog.
+
+A teszt osztályunk változóihoz adjuk hozzá a következőket:
+
+```C#
+ protected static ExtentReports extReport;
+ protected static ExtentTest extTest;
+```
+
+
 
