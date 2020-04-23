@@ -293,5 +293,10 @@ A teszt osztályunk változóihoz adjuk hozzá a következőket:
  protected static ExtentTest extTest;
 ```
 
+Aláhúzza pirossal, CTRL+. -al töltsük be a szükséges névteret. A riportnak is szüksége van kezdeti beállításokra, ezeket egy 
+[OneTimeSetup] annotációval megjelölt metódusba tesszük. A metódus a **Setup()** alá kerüljön (de mindenféleképp a tesztek elé)!
+
+
+
 
 
