@@ -316,11 +316,22 @@ A metódus a következő (ebben az esetben a riport a bin/debug mappába kerül,
 
 Innentől kezdve, a teszt egy általunk kiválasztott pontján kedvünkre loggolhatunk:
 
+A **CelsiusToFahrenheitTest()** metódusba illesszük be az első sorba rögtön:
+```C#
+ extTest = extReport.CreateTest("Celsius to Fahrenheit teszt");
+```
+
 A **CelsiusToFahrenheitTest()** metódusba illesszük be az **Assert** sor után:
 
 ```C#
 extTest.Log(Status.Pass, "Celsius to Fahrenheit teszt OK");
 ```
+A **FahrenheitToCelsiusTest()** metódusba pedig illesszük be az első sorba rögtön:
+
+```C#
+extTest = extReport.CreateTest("Fahrenheit to Celsius teszt");
+```
+
 A **FahrenheitToCelsiusTest()** metódusba pedig illesszük be az **Assert** sor után:
 
 ```C#
@@ -330,3 +341,7 @@ Az EndTest() metódusba tegyük bele:
 ```C#
  extReport.Flush();
 ```
+
+Ha ezek után lefuttatjuk a tesztet, akkor a megadott mappában létre fog jönni egy **index.html** és egy **dashboard.html** fájl a tesztek eredményével.
+
+
