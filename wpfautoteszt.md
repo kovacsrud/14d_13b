@@ -296,7 +296,22 @@ A teszt osztályunk változóihoz adjuk hozzá a következőket:
 Aláhúzza pirossal, CTRL+. -al töltsük be a szükséges névteret. A riportnak is szüksége van kezdeti beállításokra, ezeket egy 
 [OneTimeSetup] annotációval megjelölt metódusba tesszük. A metódus a **Setup()** alá kerüljön (de mindenféleképp a tesztek elé)!
 
+A metódus a következő (ebben az esetben a riport a bin/debug mappába kerül, de mehet máshová is!):
 
+```C#
+ [OneTimeSetUp]
+ public static void ReportSetup()
+ {
+    extReport = new ExtentReports();
+    var htmlReporter = new ExtentHtmlReporter(@"G:\c#_uj_projektek\WpfHomersekletAtvalto\WpfHomersekletAtvalto\bin\Debug\testresults.html");
+    extReport.AddSystemInfo("Hőmérséklet átváltás teszt", "Auto teszt");
+    extReport.AddSystemInfo("Tesztelő:", "KR");
+    extReport.AttachReporter(htmlReporter);
+    htmlReporter.Config.DocumentTitle = "HTML teszt riport";
+    htmlReporter.Config.ReportName = "Hőmérséklet átváltás teszt";
+    htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
 
+ }
+```
 
 
