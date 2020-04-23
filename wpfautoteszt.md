@@ -314,4 +314,15 @@ A metódus a következő (ebben az esetben a riport a bin/debug mappába kerül,
  }
 ```
 
+Innentől kezdve, a teszt egy általunk kiválasztott pontján kedvünkre loggolhatunk:
 
+A **CelsiusToFahrenheitTest()** metódusba illesszük be az **Assert** sor után:
+
+```C#
+extTest.Log(Status.Pass, "Celsius to Fahrenheit teszt OK");
+```
+A **FahrenheitToCelsiusTest()** metódusba pedig illesszük be az **Assert** sor után:
+
+```C#
+extTest.Log(Status.Pass, "Fahrenheit to Celsius teszt OK");
+```
