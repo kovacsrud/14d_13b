@@ -344,7 +344,7 @@ Az EndTest() metódusba tegyük bele:
 
 Ha ezek után lefuttatjuk a tesztet, akkor a megadott mappában létre fog jönni egy **index.html** és egy **dashboard.html** fájl a tesztek eredményével.
 
-Ez az alap megoldás. Látható, hogy akkor remekül működik, amikor a tesztek hibátlanul lefutnak. De vajon mi a helyzet, ha valami hiba történik? A hibás tesztek kezelésére egy külön metódust írunk. Ezt a metódust [TearDown] annotációval fogjuk jelölni, ez minden egyes teszt után le fog futni.
+Ez az alap megoldás. Látható, hogy akkor remekül működik, amikor a tesztek hibátlanul lefutnak. De vajon mi a helyzet, ha valami hiba történik? A hibás tesztek kezelésére egy külön metódust írunk. Ezt a metódust [TearDown] annotációval fogjuk jelölni, ez minden egyes teszt után le fog futni. A metódust az utolsó tesztmetódus után helyezzük el.
 
 A metódus:
 
