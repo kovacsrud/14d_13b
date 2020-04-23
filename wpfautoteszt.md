@@ -326,3 +326,7 @@ A **FahrenheitToCelsiusTest()** metódusba pedig illesszük be az **Assert** sor
 ```C#
 extTest.Log(Status.Pass, "Fahrenheit to Celsius teszt OK");
 ```
+Az EndTest() metódusba tegyük bele:
+```C#
+ extReport.Flush();
+```
