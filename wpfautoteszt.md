@@ -372,3 +372,27 @@ public static void CloseReport()
 Amennyiben a tesztünk hibára fut akkor a CloseReport() metódus rögzíti a StackTrace értékét, a hibaüzenetet, illetve egy képenyőmentést is készít a program ablakról, ami a riportban a kép ikonjára kattintva megtekinthető. 
 
 Könnyen belátható, hogy sokkal könnyebb így futtatni pl. 2 tesztet 100-100 teszt esettel, és ezek eredményét utólag kiértékelni, mint ezeket kézzel elvégezni.
+
+### Tesztmetódus több teszt esettel
+
+Egy teszt nem teszt, egy metódus tesztelését célszerű több értékkel elvégezni. A teszt metódusnál ebben az esetben használjuk a **[TestCase]** annotációt.
+pl. [TestCase(1,33.8)] -> Az első érték lesz a bemenet, a második pedig az eredményként várt érték. A [TestCase] annotációból akármennyit tehetünk a teszt metódushoz. 
+
+**A módosított teszt metódus**
+
+```c#
+ public void CelsiusToFahrenheitTest(double celsius,double result)
+{
+    extTest = extReport.CreateTest("Celsius to Fahrenheit teszt");
+    var homersekletErtek = driver.FindElementByAccessibilityId("homersekletErtek");
+    homersekletErtek.Clear();
+    homersekletErtek.SendKeys(Convert.ToString(celsius));
+    driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
+
+    var konvertaltHomerseklet = driver.FindElementByAccessibilityId("konvertaltHomerseklet");
+    Thread.Sleep(2000);
+    Assert.AreEqual(Convert.ToDouble(konvertaltHomerseklet.Text), result,0.001);
+    extTest.Log(Status.Pass, "Celsius to Fahrenheit teszt OK");
+
+}
+```
