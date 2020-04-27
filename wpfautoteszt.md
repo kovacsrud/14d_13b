@@ -380,12 +380,16 @@ pl. [TestCase(1,33.8)] -> Az első érték lesz a bemenet, a második pedig az e
 
 **A módosított teszt metódus**
 
-```c#
+```c#    
 [Test]
 [TestCase(33, 91.40)]
 [TestCase(21, 69.80)]
 [TestCase(12, 53.60)]
+//Hibás
+[TestCase(12, 55.60)]
 [TestCase(1,33.8)]
+//Hibás
+[TestCase(1, 34.8)]
  public void CelsiusToFahrenheitTest(double celsius,double result)
 {
     extTest = extReport.CreateTest("Celsius to Fahrenheit teszt");
@@ -402,4 +406,37 @@ pl. [TestCase(1,33.8)] -> Az első érték lesz a bemenet, a második pedig az e
 }
 ```
 A metódus négyszer fog lefutni. Ügyelni kell arra, hogy a teszt előtt a beviteli mező tartalmát töröljük, különben hibásan fog működni a tesztünk. Ezért kell a **homersekletErtek.Clear()** parancs pluszban.
+
+**Módosítsuk a másik metódust is!**
+
+```C#
+[Test]
+[TestCase(33.8,1)]
+//Hibás
+[TestCase(33.8, 2)]
+[TestCase(91.40,33)]
+[TestCase(69.80,21)]
+[TestCase(53.60,12)]
+public void FahrenheitToCelsiusTest(double fahrenheit,double result)
+{
+    extTest = extReport.CreateTest("Fahrenheit to Celsius teszt");
+    var homersekletErtek = driver.FindElementByAccessibilityId("homersekletErtek");
+    homersekletErtek.Clear();
+
+    homersekletErtek.SendKeys(Convert.ToString(fahrenheit));
+
+    driver.FindElementByAccessibilityId("celsiusKivalaszt").Click();
+    driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
+
+    var konvertaltHomerseklet = driver.FindElementByAccessibilityId("konvertaltHomerseklet");
+                       
+    Assert.AreEqual(Convert.ToDouble(konvertaltHomerseklet.Text), result,0.001 );
+    extTest.Log(Status.Pass, "Fahrenheit to Celsius teszt OK");
+}
+```
+
+Látszik, hogy mindkét metódushoz tettem olyan teszteseteket is, amelyek hibára fognak futni a nem megfelelő értékek miatt.
+Viszont így már a CloseReport() metódusnál a képernyőmentés nem leszt jó, hiszen fixen beledrótoztuk első körben a fájlnevet. 
+
+Javítsuk ezt ki!
 
