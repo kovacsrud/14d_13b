@@ -381,6 +381,11 @@ pl. [TestCase(1,33.8)] -> Az első érték lesz a bemenet, a második pedig az e
 **A módosított teszt metódus**
 
 ```c#
+[Test]
+[TestCase(33, 91.40)]
+[TestCase(21, 69.80)]
+[TestCase(12, 53.60)]
+[TestCase(1,33.8)]
  public void CelsiusToFahrenheitTest(double celsius,double result)
 {
     extTest = extReport.CreateTest("Celsius to Fahrenheit teszt");
@@ -390,9 +395,11 @@ pl. [TestCase(1,33.8)] -> Az első érték lesz a bemenet, a második pedig az e
     driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
 
     var konvertaltHomerseklet = driver.FindElementByAccessibilityId("konvertaltHomerseklet");
-    Thread.Sleep(2000);
+    
     Assert.AreEqual(Convert.ToDouble(konvertaltHomerseklet.Text), result,0.001);
     extTest.Log(Status.Pass, "Celsius to Fahrenheit teszt OK");
 
 }
 ```
+A metódus négyszer fog lefutni. Ügyelni kell arra, hogy a teszt előtt a beviteli mező tartalmát töröljük, különben hibásan fog működni a tesztünk. Ezért kell a **homersekletErtek.Clear()** parancs pluszban.
+
