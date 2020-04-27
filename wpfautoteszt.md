@@ -440,3 +440,47 @@ Viszont így már a CloseReport() metódusnál a képernyőmentés nem leszt jó
 
 Javítsuk ezt ki!
 
+Valami olyan információ kellene, amely egyértelműen beazonosítja a tesztesetet. A tesztbe beküldött paramétereket fel lehet erre a célra használni.
+
+Nézzük a CloseReport() metódust! Azon tevékenységek közé, amelyek hiba esetén futnak le, tegyük bele a következőket:
+
+```C#
+var be = TestContext.CurrentContext.Test.Arguments.GetValue(0);
+var elvart = TestContext.CurrentContext.Test.Arguments.GetValue(1);
+string filename = be + "_" + elvart;
+```
+A **be** és az **elvart** változókba le tudjuk kérni a teszt argumentumait, és ebből építünk fájlnevet.
+
+Módosul még pár sor:
+```C#
+screenshot.SaveAsFile(WpfProgramPath +filename+".png", ScreenshotImageFormat.Png);
+extTest.AddScreenCaptureFromPath(filename + ".png");
+```
+Mostmár nem lesz felülírás, minden hibás tesztnél meg lehet nézni a mentett képernyőt.
+
+Az egész **CloseReport()** metódus egyben:
+```C#
+[TearDown]
+public static void CloseReport()
+{
+    var status = TestContext.CurrentContext.Result.Outcome.Status;        
+    var stacktrace = TestContext.CurrentContext.Result.StackTrace;
+    var errormsg = TestContext.CurrentContext.Result.Message;
+
+            if (status == TestStatus.Failed)
+            {
+                ITakesScreenshot shot = (ITakesScreenshot)driver;
+                var be = TestContext.CurrentContext.Test.Arguments.GetValue(0);
+                var elvart = TestContext.CurrentContext.Test.Arguments.GetValue(1);
+
+                string filename = be + "_" + elvart;
+                Debug.WriteLine(filename);
+                Screenshot screenshot = shot.GetScreenshot();
+                screenshot.SaveAsFile(WpfProgramPath +filename+".png", ScreenshotImageFormat.Png);
+                extTest.Log(Status.Fail, stacktrace + errormsg);
+                extTest.Log(Status.Fail, "Képernyő:");
+                extTest.AddScreenCaptureFromPath(filename + ".png");
+            }
+
+}
+```
